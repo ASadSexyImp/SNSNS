@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2256F48123430E7300AD1F47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48023430E7300AD1F47 /* AppDelegate.swift */; };
 		2256F48323430E7300AD1F47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48223430E7300AD1F47 /* SceneDelegate.swift */; };
-		2256F48523430E7300AD1F47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48423430E7300AD1F47 /* ViewController.swift */; };
+		2256F48523430E7300AD1F47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48423430E7300AD1F47 /* RegisterViewController.swift */; };
 		2256F48823430E7300AD1F47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2256F48623430E7300AD1F47 /* Main.storyboard */; };
 		2256F48B23430E7300AD1F47 /* Haunt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48923430E7300AD1F47 /* Haunt.xcdatamodeld */; };
 		2256F48D23430E7500AD1F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256F48C23430E7500AD1F47 /* Assets.xcassets */; };
@@ -17,6 +17,8 @@
 		2256F49B23430E7500AD1F47 /* HauntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F49A23430E7500AD1F47 /* HauntTests.swift */; };
 		2256F4A623430E7500AD1F47 /* HauntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F4A523430E7500AD1F47 /* HauntUITests.swift */; };
 		22A48E0B23449EA10046C3D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E0A23449EA10046C3D3 /* GoogleService-Info.plist */; };
+		22A48E0D2344AD3E0046C3D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */; };
+		22A48E0F2344F7460046C3D3 /* AccountsettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */; };
 		34684EEB8C0E72523C2D2E58 /* Pods_HauntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3100AA1FCD05299DA7E48BFC /* Pods_HauntTests.framework */; };
 		DA70EB679CD3A0E71C362476 /* Pods_HauntUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4291CDFECB85E355AC70F88A /* Pods_HauntUITests.framework */; };
 		F2D100C9E3EC1BB413095E28 /* Pods_Haunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46205E7C364478D3F6F66CE3 /* Pods_Haunt.framework */; };
@@ -44,7 +46,7 @@
 		2256F47D23430E7300AD1F47 /* Haunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256F48023430E7300AD1F47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2256F48223430E7300AD1F47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2256F48423430E7300AD1F47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2256F48423430E7300AD1F47 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2256F48723430E7300AD1F47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2256F48A23430E7300AD1F47 /* Haunt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Haunt.xcdatamodel; sourceTree = "<group>"; };
 		2256F48C23430E7500AD1F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		2256F4A523430E7500AD1F47 /* HauntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HauntUITests.swift; sourceTree = "<group>"; };
 		2256F4A723430E7500AD1F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22A48E0A23449EA10046C3D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsettingViewController.swift; sourceTree = "<group>"; };
 		3100AA1FCD05299DA7E48BFC /* Pods_HauntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HauntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D02B0A571AA4D743D05C72 /* Pods-HauntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HauntTests.release.xcconfig"; path = "Target Support Files/Pods-HauntTests/Pods-HauntTests.release.xcconfig"; sourceTree = "<group>"; };
 		4291CDFECB85E355AC70F88A /* Pods_HauntUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HauntUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +126,9 @@
 			children = (
 				2256F48023430E7300AD1F47 /* AppDelegate.swift */,
 				2256F48223430E7300AD1F47 /* SceneDelegate.swift */,
-				2256F48423430E7300AD1F47 /* ViewController.swift */,
+				2256F48423430E7300AD1F47 /* RegisterViewController.swift */,
+				22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */,
+				22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */,
 				2256F48623430E7300AD1F47 /* Main.storyboard */,
 				2256F48C23430E7500AD1F47 /* Assets.xcassets */,
 				2256F48E23430E7500AD1F47 /* LaunchScreen.storyboard */,
@@ -396,10 +402,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2256F48523430E7300AD1F47 /* ViewController.swift in Sources */,
+				2256F48523430E7300AD1F47 /* RegisterViewController.swift in Sources */,
 				2256F48123430E7300AD1F47 /* AppDelegate.swift in Sources */,
 				2256F48B23430E7300AD1F47 /* Haunt.xcdatamodeld in Sources */,
+				22A48E0D2344AD3E0046C3D3 /* LoginViewController.swift in Sources */,
 				2256F48323430E7300AD1F47 /* SceneDelegate.swift in Sources */,
+				22A48E0F2344F7460046C3D3 /* AccountsettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
