@@ -20,6 +20,26 @@
 		22A48E0D2344AD3E0046C3D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */; };
 		22A48E0F2344F7460046C3D3 /* AccountsettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */; };
 		22A48E1123456AB90046C3D3 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1023456AB90046C3D3 /* TutorialViewController.swift */; };
+		22A48E13234570F80046C3D3 /* sxy.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E12234570F80046C3D3 /* sxy.png */; };
+		22A48E1623457E4D0046C3D3 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1523457E4D0046C3D3 /* LogViewController.swift */; };
+		22A48E1823457E780046C3D3 /* ProjectManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */; };
+		22A48E1A2345D74F0046C3D3 /* ProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */; };
+		22A48E1C2345D88E0046C3D3 /* OnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1B2345D88E0046C3D3 /* OnlineViewController.swift */; };
+		22A48E1E2345DA2C0046C3D3 /* StartProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1D2345DA2C0046C3D3 /* StartProjectViewController.swift */; };
+		22A48E252345DD4A0046C3D3 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E232345DD4A0046C3D3 /* ProjectTableViewCell.swift */; };
+		22A48E262345DD4A0046C3D3 /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E242345DD4A0046C3D3 /* ProjectTableViewCell.xib */; };
+		22A48E2C2345DE0B0046C3D3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E2B2345DE0B0046C3D3 /* ChatViewController.swift */; };
+		22A48E312345E12E0046C3D3 /* OnlineUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E2F2345E12E0046C3D3 /* OnlineUserTableViewCell.swift */; };
+		22A48E322345E12E0046C3D3 /* OnlineUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E302345E12E0046C3D3 /* OnlineUserTableViewCell.xib */; };
+		22A48E342345E2B90046C3D3 /* RecordProjectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E332345E2B90046C3D3 /* RecordProjectTimeViewController.swift */; };
+		22A48E362345E47B0046C3D3 /* FinishProjectRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E352345E47B0046C3D3 /* FinishProjectRecordingViewController.swift */; };
+		22A48E382345E4DA0046C3D3 /* CreateNewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E372345E4DA0046C3D3 /* CreateNewProjectViewController.swift */; };
+		22A48E3A2345E60B0046C3D3 /* QuickStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E392345E60B0046C3D3 /* QuickStartViewController.swift */; };
+		22A48E3E2345E6CF0046C3D3 /* ChatUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E3C2345E6CF0046C3D3 /* ChatUserTableViewCell.swift */; };
+		22A48E3F2345E6CF0046C3D3 /* ChatUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E3D2345E6CF0046C3D3 /* ChatUserTableViewCell.xib */; };
+		22A48E422345E81A0046C3D3 /* ChatConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E402345E81A0046C3D3 /* ChatConversationTableViewCell.swift */; };
+		22A48E432345E81A0046C3D3 /* ChatConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E412345E81A0046C3D3 /* ChatConversationTableViewCell.xib */; };
+		22A48E452345FD580046C3D3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E442345FD580046C3D3 /* ProfileViewController.swift */; };
 		34684EEB8C0E72523C2D2E58 /* Pods_HauntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3100AA1FCD05299DA7E48BFC /* Pods_HauntTests.framework */; };
 		DA70EB679CD3A0E71C362476 /* Pods_HauntUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4291CDFECB85E355AC70F88A /* Pods_HauntUITests.framework */; };
 		F2D100C9E3EC1BB413095E28 /* Pods_Haunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46205E7C364478D3F6F66CE3 /* Pods_Haunt.framework */; };
@@ -63,6 +83,26 @@
 		22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsettingViewController.swift; sourceTree = "<group>"; };
 		22A48E1023456AB90046C3D3 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		22A48E12234570F80046C3D3 /* sxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sxy.png; sourceTree = "<group>"; };
+		22A48E1523457E4D0046C3D3 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManageViewController.swift; sourceTree = "<group>"; };
+		22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditViewController.swift; sourceTree = "<group>"; };
+		22A48E1B2345D88E0046C3D3 /* OnlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineViewController.swift; sourceTree = "<group>"; };
+		22A48E1D2345DA2C0046C3D3 /* StartProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartProjectViewController.swift; sourceTree = "<group>"; };
+		22A48E232345DD4A0046C3D3 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		22A48E242345DD4A0046C3D3 /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
+		22A48E2B2345DE0B0046C3D3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		22A48E2F2345E12E0046C3D3 /* OnlineUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineUserTableViewCell.swift; sourceTree = "<group>"; };
+		22A48E302345E12E0046C3D3 /* OnlineUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineUserTableViewCell.xib; sourceTree = "<group>"; };
+		22A48E332345E2B90046C3D3 /* RecordProjectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordProjectTimeViewController.swift; sourceTree = "<group>"; };
+		22A48E352345E47B0046C3D3 /* FinishProjectRecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishProjectRecordingViewController.swift; sourceTree = "<group>"; };
+		22A48E372345E4DA0046C3D3 /* CreateNewProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewProjectViewController.swift; sourceTree = "<group>"; };
+		22A48E392345E60B0046C3D3 /* QuickStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStartViewController.swift; sourceTree = "<group>"; };
+		22A48E3C2345E6CF0046C3D3 /* ChatUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserTableViewCell.swift; sourceTree = "<group>"; };
+		22A48E3D2345E6CF0046C3D3 /* ChatUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatUserTableViewCell.xib; sourceTree = "<group>"; };
+		22A48E402345E81A0046C3D3 /* ChatConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConversationTableViewCell.swift; sourceTree = "<group>"; };
+		22A48E412345E81A0046C3D3 /* ChatConversationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatConversationTableViewCell.xib; sourceTree = "<group>"; };
+		22A48E442345FD580046C3D3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3100AA1FCD05299DA7E48BFC /* Pods_HauntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HauntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D02B0A571AA4D743D05C72 /* Pods-HauntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HauntTests.release.xcconfig"; path = "Target Support Files/Pods-HauntTests/Pods-HauntTests.release.xcconfig"; sourceTree = "<group>"; };
 		4291CDFECB85E355AC70F88A /* Pods_HauntUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HauntUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,11 +168,14 @@
 			children = (
 				2256F48023430E7300AD1F47 /* AppDelegate.swift */,
 				2256F48223430E7300AD1F47 /* SceneDelegate.swift */,
-				22A48E1023456AB90046C3D3 /* TutorialViewController.swift */,
-				2256F48423430E7300AD1F47 /* RegisterViewController.swift */,
-				22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */,
-				22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */,
 				2256F48623430E7300AD1F47 /* Main.storyboard */,
+				22A48E282345DD820046C3D3 /* starting */,
+				22A48E272345DD610046C3D3 /* home */,
+				22A48E292345DDCB0046C3D3 /* online */,
+				22A48E2A2345DDE40046C3D3 /* startProject */,
+				22A48E2D2345DE140046C3D3 /* Chat */,
+				22A48E2E2345DE420046C3D3 /* AccountSetting */,
+				22A48E14234570FD0046C3D3 /* image */,
 				2256F48C23430E7500AD1F47 /* Assets.xcassets */,
 				2256F48E23430E7500AD1F47 /* LaunchScreen.storyboard */,
 				2256F49123430E7500AD1F47 /* Info.plist */,
@@ -158,6 +201,79 @@
 				2256F4A723430E7500AD1F47 /* Info.plist */,
 			);
 			path = HauntUITests;
+			sourceTree = "<group>";
+		};
+		22A48E14234570FD0046C3D3 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E12234570F80046C3D3 /* sxy.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		22A48E272345DD610046C3D3 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E1523457E4D0046C3D3 /* LogViewController.swift */,
+				22A48E232345DD4A0046C3D3 /* ProjectTableViewCell.swift */,
+				22A48E242345DD4A0046C3D3 /* ProjectTableViewCell.xib */,
+				22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */,
+				22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		22A48E282345DD820046C3D3 /* starting */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E1023456AB90046C3D3 /* TutorialViewController.swift */,
+				2256F48423430E7300AD1F47 /* RegisterViewController.swift */,
+				22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */,
+			);
+			path = starting;
+			sourceTree = "<group>";
+		};
+		22A48E292345DDCB0046C3D3 /* online */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E1B2345D88E0046C3D3 /* OnlineViewController.swift */,
+				22A48E2F2345E12E0046C3D3 /* OnlineUserTableViewCell.swift */,
+				22A48E302345E12E0046C3D3 /* OnlineUserTableViewCell.xib */,
+			);
+			path = online;
+			sourceTree = "<group>";
+		};
+		22A48E2A2345DDE40046C3D3 /* startProject */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E1D2345DA2C0046C3D3 /* StartProjectViewController.swift */,
+				22A48E372345E4DA0046C3D3 /* CreateNewProjectViewController.swift */,
+				22A48E392345E60B0046C3D3 /* QuickStartViewController.swift */,
+				22A48E352345E47B0046C3D3 /* FinishProjectRecordingViewController.swift */,
+				22A48E332345E2B90046C3D3 /* RecordProjectTimeViewController.swift */,
+			);
+			path = startProject;
+			sourceTree = "<group>";
+		};
+		22A48E2D2345DE140046C3D3 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E2B2345DE0B0046C3D3 /* ChatViewController.swift */,
+				22A48E3C2345E6CF0046C3D3 /* ChatUserTableViewCell.swift */,
+				22A48E3D2345E6CF0046C3D3 /* ChatUserTableViewCell.xib */,
+				22A48E402345E81A0046C3D3 /* ChatConversationTableViewCell.swift */,
+				22A48E412345E81A0046C3D3 /* ChatConversationTableViewCell.xib */,
+				22A48E442345FD580046C3D3 /* ProfileViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		22A48E2E2345DE420046C3D3 /* AccountSetting */ = {
+			isa = PBXGroup;
+			children = (
+				22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */,
+			);
+			path = AccountSetting;
 			sourceTree = "<group>";
 		};
 		65BD8E49EBE1415BB2433DA5 /* Frameworks */ = {
@@ -291,8 +407,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A48E13234570F80046C3D3 /* sxy.png in Resources */,
+				22A48E432345E81A0046C3D3 /* ChatConversationTableViewCell.xib in Resources */,
+				22A48E262345DD4A0046C3D3 /* ProjectTableViewCell.xib in Resources */,
 				2256F49023430E7500AD1F47 /* LaunchScreen.storyboard in Resources */,
 				2256F48D23430E7500AD1F47 /* Assets.xcassets in Resources */,
+				22A48E3F2345E6CF0046C3D3 /* ChatUserTableViewCell.xib in Resources */,
+				22A48E322345E12E0046C3D3 /* OnlineUserTableViewCell.xib in Resources */,
 				2256F48823430E7300AD1F47 /* Main.storyboard in Resources */,
 				22A48E0B23449EA10046C3D3 /* GoogleService-Info.plist in Resources */,
 			);
@@ -406,12 +527,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				2256F48523430E7300AD1F47 /* RegisterViewController.swift in Sources */,
+				22A48E1823457E780046C3D3 /* ProjectManageViewController.swift in Sources */,
 				22A48E1123456AB90046C3D3 /* TutorialViewController.swift in Sources */,
+				22A48E252345DD4A0046C3D3 /* ProjectTableViewCell.swift in Sources */,
+				22A48E3A2345E60B0046C3D3 /* QuickStartViewController.swift in Sources */,
+				22A48E342345E2B90046C3D3 /* RecordProjectTimeViewController.swift in Sources */,
+				22A48E452345FD580046C3D3 /* ProfileViewController.swift in Sources */,
 				2256F48123430E7300AD1F47 /* AppDelegate.swift in Sources */,
+				22A48E1623457E4D0046C3D3 /* LogViewController.swift in Sources */,
+				22A48E3E2345E6CF0046C3D3 /* ChatUserTableViewCell.swift in Sources */,
+				22A48E362345E47B0046C3D3 /* FinishProjectRecordingViewController.swift in Sources */,
+				22A48E1C2345D88E0046C3D3 /* OnlineViewController.swift in Sources */,
+				22A48E422345E81A0046C3D3 /* ChatConversationTableViewCell.swift in Sources */,
 				2256F48B23430E7300AD1F47 /* Haunt.xcdatamodeld in Sources */,
+				22A48E1A2345D74F0046C3D3 /* ProjectEditViewController.swift in Sources */,
 				22A48E0D2344AD3E0046C3D3 /* LoginViewController.swift in Sources */,
+				22A48E312345E12E0046C3D3 /* OnlineUserTableViewCell.swift in Sources */,
+				22A48E2C2345DE0B0046C3D3 /* ChatViewController.swift in Sources */,
 				2256F48323430E7300AD1F47 /* SceneDelegate.swift in Sources */,
+				22A48E1E2345DA2C0046C3D3 /* StartProjectViewController.swift in Sources */,
 				22A48E0F2344F7460046C3D3 /* AccountsettingViewController.swift in Sources */,
+				22A48E382345E4DA0046C3D3 /* CreateNewProjectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
