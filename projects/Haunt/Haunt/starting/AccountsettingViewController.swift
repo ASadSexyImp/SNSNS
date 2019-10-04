@@ -9,7 +9,18 @@
 import UIKit
 
 class AccountsettingViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var AccountImageView: UIImageView!
+    @IBOutlet weak var UsernameTextField: UITextField!
+    @IBOutlet weak var LinkTextField: UITextField!
+    
+    @IBOutlet weak var ColorPinkButton: UIButton!
+    @IBOutlet weak var ColorGradButton: UIButton!
+    @IBOutlet weak var ColorBlueButton: UIButton!
+    
+    @IBOutlet weak var startButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
