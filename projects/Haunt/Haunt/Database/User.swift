@@ -10,12 +10,12 @@ import Foundation
 import Firebase
 
 struct User {
-    let uid: String!
-    let name: String!
-    let link: String!
-    let color: String!
-    let imagePath: String!
-    let haunts: [Haunt]!
-    let projects: [Project]!
+    var uid: String!
+    var name: String!
+    var link: String!
+    var color: UIColor!
+    var imagePath: String!
+    var haunts: [Haunt]!
+    var projects: [Project]!
 
 }

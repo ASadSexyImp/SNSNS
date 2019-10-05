@@ -10,8 +10,8 @@ import Foundation
 import Firebase
 
 struct Haunt {
-    let hid: String!
-    let name: String!
-    let imagePath: String!
-    let users: [User]!
+    var hid: String!
+    var name: String!
+    var imagePath: String!
+    var users: [User]!
 }

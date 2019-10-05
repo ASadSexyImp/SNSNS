@@ -10,8 +10,8 @@ import Foundation
 import Firebase
 
 struct Project {
-    let pid: String!
-    let name: String!
-    let haunts: [Haunt]!
-    let user: User!
+    var pid: String!
+    var name: String!
+    var haunts: [Haunt]!
+    var user: User!
 }

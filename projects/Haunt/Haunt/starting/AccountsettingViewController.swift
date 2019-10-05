@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AccountsettingViewController: UIViewController {
     
@@ -19,7 +20,11 @@ class AccountsettingViewController: UIViewController {
     @IBOutlet weak var ColorGradButton: UIButton!
     @IBOutlet weak var ColorBlueButton: UIButton!
     
-    @IBOutlet weak var startButton: UIButton!
+    var userColor:UIColor!
+    //firestore
+    var db:Firestore!
+    // my info
+    var me: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +35,69 @@ class AccountsettingViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    // gradient color
-//    func setGradientBackground() {
-//        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-//        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
-//
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [colorTop, colorBottom]
-//        gradientLayer.locations = [0.0, 1.0]
-//        gradientLayer.frame = self.view.bounds
-//
-//        self.view.layer.insertSublayer(gradientLayer, at:0)
-//    }
+    // pink button
+    @IBAction func pinkButton(_ sender: Any) {
+        // decide user color
+        userColor = ColorPinkButton.backgroundColor
+        // change background
+        ColorPinkButton.backgroundColor = UIColor.black
+        // enable to push only other button
+        ColorPinkButton.isEnabled = false
+        ColorGradButton.isEnabled = true
+        ColorBlueButton.isEnabled = true
+    }
+    // grad button
+    @IBAction func gradButton(_ sender: Any) {
+        // decide user color
+        userColor = ColorGradButton.backgroundColor
+        // change background
+        ColorGradButton.backgroundColor = UIColor.black
+        // enable to push only other button
+        ColorPinkButton.isEnabled = true
+        ColorGradButton.isEnabled = false
+        ColorBlueButton.isEnabled = true
+    }
+    // blue button
+    @IBAction func blueButton(_ sender: Any) {
+        // decide user color
+        userColor = ColorBlueButton.backgroundColor
+        // change background
+        ColorBlueButton.backgroundColor = UIColor.black
+        // enable to push only other button
+        ColorPinkButton.isEnabled = true
+        ColorGradButton.isEnabled = true
+        ColorBlueButton.isEnabled = false
+    }
+    
+    @IBAction func touchUpInsideStartButton(_ sender: Any) {
+        let name = UsernameTextField.text!
+        let link = LinkTextField.text!
+        let color = userColor!
+//        let image =
+        
+        // define my information
+        me.name = name
+        me.link = link
+        me.color = color
+        me.haunts = []
+        me.projects = []
+        
+        let saveDocument = db.collection("users").document()
+        saveDocument.setData([
+            "name": name,
+            "link": link,
+            "color": color
+        ]) { error in
+            if error != nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        performSegue(withIdentifier: "toHome", sender: me)
+    }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // close keyboard
+        textField.resignFirstResponder()
+        return true
+    }
 }

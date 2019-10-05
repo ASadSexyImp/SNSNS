@@ -124,11 +124,18 @@
                                 <state key="normal" title="start">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchUpInsideStartButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="WMW-hy-zoM"/>
+                                    <segue destination="v8E-0z-zGk" kind="presentation" identifier="toHome" id="pgy-Er-pIf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkC-4x-ZEV">
                                 <rect key="frame" x="91" y="348" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.13767088860000001" blue="0.97773502639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="pinkButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="EKD-bc-rqL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-28-wyV">
                                 <rect key="frame" x="111" y="368" width="0.0" height="0.0"/>
@@ -138,12 +145,18 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-Uj-avI">
                                 <rect key="frame" x="300" y="348" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="blueButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="dD1-SD-iGX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnT-NX-ZEa">
                                 <rect key="frame" x="192" y="348" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.13767088860000001" blue="0.97773502639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="gradButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="ByW-eE-bDi"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qJA-lu-tJu">
                                 <rect key="frame" x="0.0" y="456" width="414" height="128"/>
@@ -173,12 +186,11 @@
                     </view>
                     <connections>
                         <outlet property="AccountImageView" destination="CTN-80-Swj" id="k3L-63-P2b"/>
-                        <outlet property="Color" destination="hkC-4x-ZEV" id="IyK-gQ-b8W"/>
-                        <outlet property="ColorBlueButton" destination="6Ku-Uj-avI" id="uei-vh-lL4"/>
-                        <outlet property="ColorGradButton" destination="CnT-NX-ZEa" id="TPc-qt-MAJ"/>
+                        <outlet property="ColorBlueButton" destination="6Ku-Uj-avI" id="zcm-1c-h1W"/>
+                        <outlet property="ColorGradButton" destination="CnT-NX-ZEa" id="rsF-t7-wJf"/>
+                        <outlet property="ColorPinkButton" destination="hkC-4x-ZEV" id="tfE-7b-qbq"/>
                         <outlet property="LinkTextField" destination="tNm-X2-jWy" id="lzh-RO-8mV"/>
                         <outlet property="UsernameTextField" destination="CjZ-F9-be3" id="Rn3-mB-Xd6"/>
-                        <outlet property="startButton" destination="Qeg-iI-KfD" id="WKh-oP-tZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbg-Xn-Q2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,7 +200,7 @@
         <!--View Controller-->
         <scene sceneID="yZg-QG-VTW">
             <objects>
-                <viewController id="v8E-0z-zGk" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="v8E-0z-zGk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PMK-3l-Fz6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,7 +553,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvv-cQ-iE4">
                                         <rect key="frame" x="300" y="348" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </button>
                                     <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vli-mz-0bK">
                                         <rect key="frame" x="0.0" y="813" width="414" height="49"/>
@@ -655,7 +667,7 @@
                                 <rect key="frame" x="188" y="660" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Block">
-                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLS-b1-AHu">
@@ -1265,6 +1277,7 @@
                                 </state>
                                 <connections>
                                     <action selector="touchUpInsideLoginButton:" destination="2j1-sm-xvj" eventType="touchUpInside" id="Bii-wN-oie"/>
+                                    <segue destination="Vj2-du-vHD" kind="presentation" identifier="toAccountSetting" id="j1N-4i-cUs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kck-B0-GgD">
@@ -1278,11 +1291,11 @@
                                 <rect key="frame" x="137" y="279" width="137" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-BP-FXF">
-                                <rect key="frame" x="243" y="753" width="53" height="30"/>
+                                <rect key="frame" x="240" y="749" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="register"/>
                                 <connections>
@@ -1306,4 +1319,7 @@
     <resources>
         <image name="sxy.png" width="1000" height="1000"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="j1N-4i-cUs"/>
+    </inferredMetricsTieBreakers>
 </document>
