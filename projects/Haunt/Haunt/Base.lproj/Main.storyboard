@@ -46,7 +46,7 @@
                                 </state>
                                 <connections>
                                     <action selector="touchUpInsideRegisterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8wa-fN-8Kd"/>
-                                    <segue destination="Vj2-du-vHD" kind="presentation" id="UkQ-lb-lyG"/>
+                                    <segue destination="Vj2-du-vHD" kind="presentation" identifier="toAccountSetting" id="UkQ-lb-lyG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEk-H0-oqP">
@@ -1243,7 +1243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0U-Fv-hwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.52173913043487" y="115.84821428571428"/>
+            <point key="canvasLocation" x="839" y="116"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="gL4-iR-K7b">
@@ -1320,6 +1320,6 @@
         <image name="sxy.png" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j1N-4i-cUs"/>
+        <segue reference="UkQ-lb-lyG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,5 +17,5 @@ struct User {
     var imagePath: String!
     var haunts: [Haunt]!
     var projects: [Project]!
-
+    var online: Bool!
 }

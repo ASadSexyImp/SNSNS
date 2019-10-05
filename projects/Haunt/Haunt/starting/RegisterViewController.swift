@@ -79,8 +79,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                     } else {
-                        
-                        self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "toAccountSetting", sender: user)
                     }
                 })
             }

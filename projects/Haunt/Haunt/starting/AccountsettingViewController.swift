@@ -11,7 +11,6 @@ import Firebase
 
 class AccountsettingViewController: UIViewController {
     
-    
     @IBOutlet weak var AccountImageView: UIImageView!
     @IBOutlet weak var UsernameTextField: UITextField!
     @IBOutlet weak var LinkTextField: UITextField!
@@ -25,6 +24,8 @@ class AccountsettingViewController: UIViewController {
     var db:Firestore!
     // my info
     var me: User!
+    // current user
+    let currentUser = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +70,18 @@ class AccountsettingViewController: UIViewController {
         ColorBlueButton.isEnabled = false
     }
     
+    
+    
     @IBAction func touchUpInsideStartButton(_ sender: Any) {
+        let uid = currentUser?.uid
+        
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
         let color = userColor!
+        var haunts: [String]!
+        for haunt in me.haunts {
+            haunts.append(haunt.hid)
+        }
 //        let image =
         
         // define my information
@@ -80,13 +89,14 @@ class AccountsettingViewController: UIViewController {
         me.link = link
         me.color = color
         me.haunts = []
-        me.projects = []
         
-        let saveDocument = db.collection("users").document()
+        // create document in firestore
+        let saveDocument = db.collection("users").document((uid as? String)!)
         saveDocument.setData([
             "name": name,
             "link": link,
-            "color": color
+            "color": color,
+            "haunts": haunts
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
