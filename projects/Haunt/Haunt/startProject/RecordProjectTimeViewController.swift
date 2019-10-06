@@ -9,22 +9,34 @@
 import UIKit
 
 class RecordProjectTimeViewController: UIViewController {
-
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet var label: UILabel!
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var count: Int = 0
+    
+    var timer: Timer = Timer()
+    
+    @IBAction func start() {
+        if !timer.isValid {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
+        }
     }
-    */
+    
+    @IBAction func stop() {
+        if timer.isValid {
+            timer.invalidate()
+        }
+    }
+    
+    @objc func up() {
+        count = count + 1
+        label.text = String(format: "%.2f ", count)
+    }
 
 }

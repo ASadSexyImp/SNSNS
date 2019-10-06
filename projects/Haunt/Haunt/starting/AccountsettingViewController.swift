@@ -35,7 +35,7 @@ class AccountsettingViewController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    HauntArray.append(document.hid) //
+//                    HauntArray.append(document.hid) //
                 }
             }
         }
