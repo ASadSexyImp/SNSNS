@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223E17902348DBA600274434 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E178F2348DBA600274434 /* HomeViewController.swift */; };
+		223E179223495C1800274434 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E179123495C1800274434 /* Log.swift */; };
 		2256F48123430E7300AD1F47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48023430E7300AD1F47 /* AppDelegate.swift */; };
 		2256F48323430E7300AD1F47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48223430E7300AD1F47 /* SceneDelegate.swift */; };
 		2256F48523430E7300AD1F47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256F48423430E7300AD1F47 /* RegisterViewController.swift */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		019BE82F386581F5CB2D906C /* Pods-HauntUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HauntUITests.debug.xcconfig"; path = "Target Support Files/Pods-HauntUITests/Pods-HauntUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		223E178F2348DBA600274434 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		223E179123495C1800274434 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2256F47D23430E7300AD1F47 /* Haunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256F48023430E7300AD1F47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2256F48223430E7300AD1F47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				22A48E232345DD4A0046C3D3 /* ProjectTableViewCell.swift */,
 				22A48E242345DD4A0046C3D3 /* ProjectTableViewCell.xib */,
 				22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */,
+				223E178F2348DBA600274434 /* HomeViewController.swift */,
 				22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */,
 			);
 			path = home;
@@ -295,6 +300,7 @@
 				22B5F0E723483E33003733F0 /* User.swift */,
 				22B5F0E9234842C5003733F0 /* Haunt.swift */,
 				22B5F0EB23484348003733F0 /* Project.swift */,
+				223E179123495C1800274434 /* Log.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				22A48E3E2345E6CF0046C3D3 /* ChatUserTableViewCell.swift in Sources */,
 				22A48E362345E47B0046C3D3 /* FinishProjectRecordingViewController.swift in Sources */,
 				22A48E1C2345D88E0046C3D3 /* OnlineViewController.swift in Sources */,
+				223E17902348DBA600274434 /* HomeViewController.swift in Sources */,
 				22A48E422345E81A0046C3D3 /* ChatConversationTableViewCell.swift in Sources */,
 				2256F48B23430E7300AD1F47 /* Haunt.xcdatamodeld in Sources */,
 				22A48E1A2345D74F0046C3D3 /* ProjectEditViewController.swift in Sources */,
@@ -571,6 +578,7 @@
 				22A48E312345E12E0046C3D3 /* OnlineUserTableViewCell.swift in Sources */,
 				22A48E2C2345DE0B0046C3D3 /* ChatViewController.swift in Sources */,
 				2256F48323430E7300AD1F47 /* SceneDelegate.swift in Sources */,
+				223E179223495C1800274434 /* Log.swift in Sources */,
 				22B5F0E823483E33003733F0 /* User.swift in Sources */,
 				22A48E1E2345DA2C0046C3D3 /* StartProjectViewController.swift in Sources */,
 				22A48E0F2344F7460046C3D3 /* AccountsettingViewController.swift in Sources */,

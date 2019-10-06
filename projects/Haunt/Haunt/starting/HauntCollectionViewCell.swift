@@ -22,5 +22,10 @@ class HauntCollectionViewCell: UICollectionViewCell {
     @IBAction override func select(_ sender: Any?) {
         
     }
+    
+    func setUpContents(image: UIImage, textName: String) {
+        ImageButton.setImage(image, for: .normal)
+        ToolNameLabel.text = textName
+    }
 
 }

@@ -191,16 +191,17 @@
                         <outlet property="ColorPinkButton" destination="hkC-4x-ZEV" id="tfE-7b-qbq"/>
                         <outlet property="LinkTextField" destination="tNm-X2-jWy" id="lzh-RO-8mV"/>
                         <outlet property="UsernameTextField" destination="CjZ-F9-be3" id="Rn3-mB-Xd6"/>
+                        <outlet property="hauntCollectionView" destination="qJA-lu-tJu" id="Mob-7K-ezN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbg-Xn-Q2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="yZg-QG-VTW">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="v8E-0z-zGk" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="v8E-0z-zGk" customClass="HomeViewController" customModule="Haunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PMK-3l-Fz6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +211,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="https://asadsexyimp.github.io" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-hj-sv5">
-                                <rect key="frame" x="172" y="115" width="214" height="20"/>
+                                <rect key="frame" x="170" y="115" width="214" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -362,6 +363,14 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="rXU-CQ-G08"/>
                     </view>
+                    <connections>
+                        <outlet property="L" destination="GaN-hj-sv5" id="aXI-fC-YRL"/>
+                        <outlet property="linkLabel" destination="GaN-hj-sv5" id="vPc-d6-pMs"/>
+                        <outlet property="logCollectionView" destination="nRS-AJ-FEN" id="UNl-sG-hva"/>
+                        <outlet property="nameLabel" destination="9pb-T8-5Gd" id="Jbx-cJ-yDh"/>
+                        <outlet property="profileImageView" destination="Iwz-As-gcE" id="NHb-0j-1mU"/>
+                        <outlet property="projectCollectionView" destination="4LM-J1-tBz" id="aqK-Ro-Yyx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebR-h6-1HZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -19,16 +19,26 @@ class AccountsettingViewController: UIViewController {
     @IBOutlet weak var ColorGradButton: UIButton!
     @IBOutlet weak var ColorBlueButton: UIButton!
     
+    @IBOutlet weak var hauntCollectionView: UICollectionView!
+    
     var userColor:UIColor!
-    //firestore
-    var db:Firestore!
-    // my info
     var me: User!
-    // current user
+    var db:Firestore!
+    var HauntArray: [Haunt]!
     let currentUser = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db.collection("haunts").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    HauntArray.append(document.hid) //
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
