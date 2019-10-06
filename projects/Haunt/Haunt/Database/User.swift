@@ -18,4 +18,5 @@ struct User {
     var haunts: [Haunt]!
     var projects: [Project]!
     var online: Bool!
+    var log: [Log]!
 }

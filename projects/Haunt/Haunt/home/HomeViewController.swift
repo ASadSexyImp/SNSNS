@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var projectCollectionView: UICollectionView!
     
     var cellCount: Int!
+    var db:Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.projectCollectionView.delegate = self
         self.projectCollectionView.dataSource = self
         
+        
 //        nameLabel.text = me.name
 //        linkLabel.text = me.link
+//        let docRef = db.collection("users").document(me.uid)
+
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

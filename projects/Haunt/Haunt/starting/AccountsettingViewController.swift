@@ -19,26 +19,26 @@ class AccountsettingViewController: UIViewController {
     @IBOutlet weak var ColorGradButton: UIButton!
     @IBOutlet weak var ColorBlueButton: UIButton!
     
-    @IBOutlet weak var hauntCollectionView: UICollectionView!
+//    @IBOutlet weak var hauntCollectionView: UICollectionView!
     
     var userColor:UIColor!
     var me: User!
     var db:Firestore!
-    var HauntArray: [Haunt]!
     let currentUser = Auth.auth().currentUser
+//    var HauntArray: [Haunt]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        db.collection("haunts").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-//                    HauntArray.append(document.hid) //
-                }
-            }
-        }
+//        db.collection("haunts").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+////                    HauntArray.append(document.hid) //
+//                }
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,36 +80,36 @@ class AccountsettingViewController: UIViewController {
         ColorBlueButton.isEnabled = false
     }
     
-    
-    
     @IBAction func touchUpInsideStartButton(_ sender: Any) {
         let uid = currentUser?.uid
-        
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
         let color = userColor!
-        var haunts: [String]!
-        for haunt in me.haunts {
-            haunts.append(haunt.hid)
-        }
+//        var haunts: [String]!
+//        for haunt in me.haunts {
+//            haunts.append(haunt.hid)
+//        }
 //        let image =
         
         // define my information
+        me.uid = uid
         me.name = name
         me.link = link
         me.color = color
-        me.haunts = []
+//        me.haunts = []
         
         // create document in firestore
-        let saveDocument = db.collection("users").document((uid as? String)!)
+        let saveDocument = db.collection("users").document(me.name)
         saveDocument.setData([
+            "uid": uid as String?,
             "name": name,
             "link": link,
             "color": color,
-            "haunts": haunts
+//            "haunts": haunts
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
+                print("send error!")
             }
         }
         performSegue(withIdentifier: "toHome", sender: me)
