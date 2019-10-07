@@ -18,9 +18,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mailTextField.delegate = self
-        passwordTextField.delegate = self
-        passwordConfirmTextField.delegate = self
+//        mailTextField.layer.borderColor=[[UIColor, colorWithRed,:178.0f/255.0f green:178.0f/255.0f blue:178.0f/255.0f alpha:1.0], CGColor]
+        mailTextField.layer.borderColor = UIColor.purple.cgColor
+        mailTextField.layer.borderWidth = 2.0
+        mailTextField.attributedPlaceholder = NSAttributedString(string: "mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+        
+        passwordTextField.layer.borderColor = UIColor.purple.cgColor
+        passwordTextField.layer.borderWidth = 2.0
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+        passwordConfirmTextField.isSecureTextEntry = true // disclose password
+        
+        passwordConfirmTextField.layer.borderColor = UIColor.purple.cgColor
+        passwordConfirmTextField.layer.borderWidth = 2.0
+        passwordConfirmTextField.attributedPlaceholder = NSAttributedString(string: "password confirm", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         passwordConfirmTextField.isSecureTextEntry = true // disclose password
     }
     
@@ -95,14 +105,4 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toAccountSettingView" {
-            let accountViewController = segue.destination as! AccountsettingViewController
-            accountViewController.user = Auth.auth().currentUser
-        }
-    }
-
-
 }
-

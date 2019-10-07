@@ -21,7 +21,6 @@ class AccountsettingViewController: UIViewController {
     
     @IBOutlet weak var hauntCollectionView: UICollectionView!
     
-    var user: Auth!
     var collectionArray: [QueryDocumentSnapshot] = []
     var userColor:UIColor!
     var me: User!
@@ -50,10 +49,10 @@ class AccountsettingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //        setGradientBackground();
         super.viewWillAppear(animated)
     }
     
+    // when push collection view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
         let hauntName = String(describing: content["name"]!)
@@ -66,9 +65,7 @@ class AccountsettingViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HauntCollectionViewCell
-        //postの中身を辞書型に変換
         let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
-        //contentという添字で保存していた投稿内容を表示
         cell.ToolNameLabel.text = String(describing: content["name"]!)
         
         return cell
@@ -119,7 +116,7 @@ class AccountsettingViewController: UIViewController {
         me.uid = uid
         me.name = name
         me.link = link
-        me.color = color
+//        me.color = color
         
         // create document in firestore
         let saveDocument = db.collection("users").document()
@@ -142,5 +139,12 @@ class AccountsettingViewController: UIViewController {
         // close keyboard
         textField.resignFirstResponder()
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHomeView" {
+            let homeViewController = segue.destination as! HomeViewController
+            homeViewController.me = me
+        }
     }
 }

@@ -11,6 +11,8 @@ import UIKit
 class RecordProjectTimeViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
+    var project: Project!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

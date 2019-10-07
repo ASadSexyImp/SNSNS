@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import Firebase
 
 struct User {
     var uid: String!
     var name: String!
     var link: String!
-    var color: UIColor!
+//    var color: UIColor!
     var imagePath: String!
     var haunts: [String]!
     var projects: [String]!

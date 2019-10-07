@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 
 struct Haunt {
     var hid: String!

@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import Firebase
 
 struct Project {
     var pid: String!
     var name: String!
     var time: NSDate!
-    var secret: Bool!
-    var haunts: [Haunt]!
+    var secret: Bool = false
+    var haunts: String
 }

@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var cellCount: Int!
     var db:Firestore!
+    var me: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.projectCollectionView.dataSource = self
         
         
-//        nameLabel.text = me.name
-//        linkLabel.text = me.link
+        nameLabel.text = me.name
+        linkLabel.text = me.link
 //        let docRef = db.collection("logs").whereField("user", isEqualTo: me.name)
 
 //        docRef.getDocument { (document, error) in
