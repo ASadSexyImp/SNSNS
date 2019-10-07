@@ -19,31 +19,59 @@ class AccountsettingViewController: UIViewController {
     @IBOutlet weak var ColorGradButton: UIButton!
     @IBOutlet weak var ColorBlueButton: UIButton!
     
-//    @IBOutlet weak var hauntCollectionView: UICollectionView!
+    @IBOutlet weak var hauntCollectionView: UICollectionView!
     
+    var user: Auth!
+    var collectionArray: [QueryDocumentSnapshot] = []
     var userColor:UIColor!
     var me: User!
     var db:Firestore!
     let currentUser = Auth.auth().currentUser
-//    var HauntArray: [Haunt]!
+    //    var HauntArray: [Haunt]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        db.collection("haunts").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    print("\(document.documentID) => \(document.data())")
-////                    HauntArray.append(document.hid) //
-//                }
-//            }
-//        }
+        
+        db.collection("haunts").addSnapshotListener { snaps, error in
+            
+            if let error = error {
+                fatalError("\(error)")
+            }
+            guard let snaps = snaps else { return }
+            
+            // reload data
+            self.collectionArray.removeAll()
+            for document in snaps.documents {
+                self.collectionArray.append(document)
+            }
+            self.hauntCollectionView.reloadData()
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        setGradientBackground();
+        //        setGradientBackground();
         super.viewWillAppear(animated)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
+        let hauntName = String(describing: content["name"]!)
+        me.haunts.append(hauntName)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HauntCollectionViewCell
+        //postの中身を辞書型に変換
+        let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
+        //contentという添字で保存していた投稿内容を表示
+        cell.ToolNameLabel.text = String(describing: content["name"]!)
+        
+        return cell
     }
     
     // pink button
@@ -85,27 +113,22 @@ class AccountsettingViewController: UIViewController {
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
         let color = userColor!
-//        var haunts: [String]!
-//        for haunt in me.haunts {
-//            haunts.append(haunt.hid)
-//        }
-//        let image =
+        //        let image =
         
         // define my information
         me.uid = uid
         me.name = name
         me.link = link
         me.color = color
-//        me.haunts = []
         
         // create document in firestore
-        let saveDocument = db.collection("users").document(me.name)
+        let saveDocument = db.collection("users").document()
         saveDocument.setData([
             "uid": uid as String?,
             "name": name,
             "link": link,
             "color": color,
-//            "haunts": haunts
+            "haunts": collectionArray
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
@@ -114,7 +137,7 @@ class AccountsettingViewController: UIViewController {
         }
         performSegue(withIdentifier: "toHome", sender: me)
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // close keyboard
         textField.resignFirstResponder()

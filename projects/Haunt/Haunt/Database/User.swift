@@ -15,8 +15,8 @@ struct User {
     var link: String!
     var color: UIColor!
     var imagePath: String!
-    var haunts: [Haunt]!
-    var projects: [Project]!
+    var haunts: [String]!
+    var projects: [String]!
     var online: Bool!
     var log: [Log]!
 }

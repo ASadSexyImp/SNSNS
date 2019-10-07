@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                     } else {
-                        self.performSegue(withIdentifier: "toAccountSetting", sender: user)
+                        self.performSegue(withIdentifier: "toResultView", sender: nil)
                     }
                 })
             }
@@ -95,6 +95,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAccountSettingView" {
+            let accountViewController = segue.destination as! AccountsettingViewController
+            accountViewController.user = Auth.auth().currentUser
+        }
+    }
+
 
 }
 

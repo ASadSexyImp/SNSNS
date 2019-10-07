@@ -27,5 +27,7 @@ class HauntCollectionViewCell: UICollectionViewCell {
         ImageButton.setImage(image, for: .normal)
         ToolNameLabel.text = textName
     }
+    
+
 
 }

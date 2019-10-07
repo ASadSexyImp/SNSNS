@@ -21,8 +21,7 @@ class StartProjectViewController: UIViewController,  UIPickerViewDelegate, UIPic
         self.projectPickerView.dataSource = self
         
         // Input the data into the array
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
-        // Do any additional setup after loading the view.
+        pickerData = ["No Project"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,4 +41,14 @@ class StartProjectViewController: UIViewController,  UIPickerViewDelegate, UIPic
         return pickerData[row]
     }
 
+    @IBAction func TouchUpInsideStart(_ sender: Any) {
+        if pickerData == ["No project"] {
+            return
+        }
+        performSegue(withIdentifier: "toRecordProject", sender: nil)
+    }
+    
+    @IBAction func TouchUpInsideNew(_ sender: Any) {
+        performSegue(withIdentifier: "toCreateNewProject", sender: nil)
+    }
 }

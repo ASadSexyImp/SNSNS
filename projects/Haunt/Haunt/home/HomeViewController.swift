@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
 //        nameLabel.text = me.name
 //        linkLabel.text = me.link
-//        let docRef = db.collection("users").document(me.uid)
+//        let docRef = db.collection("logs").whereField("user", isEqualTo: me.name)
 
 //        docRef.getDocument { (document, error) in
 //            if let document = document, document.exists {
@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //        cell.backgroundColor = me.color
 //        
 //        if maxCommit! == 0 {
-//            cell.backgroundColor = UIColor(red: 196 / 255, green: 196 / 255, blue: 196 / 255, alpha: 1)
+//            cell.backgroundColor = UIColor(me.color, alpha: 1)
 //        }
         return cell
     }

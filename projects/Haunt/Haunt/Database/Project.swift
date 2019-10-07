@@ -13,5 +13,6 @@ struct Project {
     var pid: String!
     var name: String!
     var time: NSDate!
+    var secret: Bool!
     var haunts: [Haunt]!
 }
