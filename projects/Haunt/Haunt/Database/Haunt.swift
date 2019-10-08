@@ -12,5 +12,5 @@ struct Haunt {
     var hid: String!
     var name: String!
     var imagePath: String!
-    var users: [User]!
+    var users: [String]!
 }

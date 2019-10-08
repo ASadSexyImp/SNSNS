@@ -131,6 +131,7 @@
                                 </state>
                                 <connections>
                                     <action selector="touchUpInsideStartButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="WMW-hy-zoM"/>
+                                    <segue destination="v8E-0z-zGk" kind="presentation" identifier="toHome" id="nhE-Mr-9mh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkC-4x-ZEV">
@@ -196,6 +197,7 @@
                         <outlet property="LinkTextField" destination="tNm-X2-jWy" id="lzh-RO-8mV"/>
                         <outlet property="UsernameTextField" destination="CjZ-F9-be3" id="Rn3-mB-Xd6"/>
                         <outlet property="hauntCollectionView" destination="qJA-lu-tJu" id="Mob-7K-ezN"/>
+                        <outlet property="startButton" destination="Qeg-iI-KfD" id="9ep-Fv-MDE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbg-Xn-Q2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1363,5 +1365,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kuz-Pr-Jqr"/>
+        <segue reference="nhE-Mr-9mh"/>
     </inferredMetricsTieBreakers>
 </document>
