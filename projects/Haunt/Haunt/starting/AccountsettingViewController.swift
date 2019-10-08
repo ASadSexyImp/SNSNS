@@ -25,11 +25,14 @@ class AccountsettingViewController: UIViewController {
     var userColor:UIColor!
     var me: User!
     var db:Firestore!
-    let currentUser = Auth.auth().currentUser
     //    var HauntArray: [Haunt]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Auth.auth().currentUser == nil {
+            dismiss(animated: true, completion: nil)
+        }
+        db = Firestore.firestore()
         
         db.collection("haunts").addSnapshotListener { snaps, error in
             
@@ -106,7 +109,7 @@ class AccountsettingViewController: UIViewController {
     }
     
     @IBAction func touchUpInsideStartButton(_ sender: Any) {
-        let uid = currentUser?.uid
+        let uid = Auth.auth().currentUser?.uid
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
         let color = userColor!
@@ -116,12 +119,12 @@ class AccountsettingViewController: UIViewController {
         me.uid = uid
         me.name = name
         me.link = link
-//        me.color = color
+        me.color = color
         
         // create document in firestore
         let saveDocument = db.collection("users").document()
         saveDocument.setData([
-            "uid": uid as String?,
+            "uid": uid,
             "name": name,
             "link": link,
             "color": color,
