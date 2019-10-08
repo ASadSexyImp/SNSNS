@@ -16,37 +16,32 @@ class AccountsettingViewController: UIViewController {
     @IBOutlet weak var UsernameTextField: UITextField!
     @IBOutlet weak var LinkTextField: UITextField!
     
-//    @IBOutlet weak var ColorPinkButton: UIButton!
-//    @IBOutlet weak var ColorGradButton: UIButton!
-//    @IBOutlet weak var ColorBlueButton: UIButton!
+    //    @IBOutlet weak var ColorPinkButton: UIButton!
+    //    @IBOutlet weak var ColorGradButton: UIButton!
+    //    @IBOutlet weak var ColorBlueButton: UIButton!
     
     @IBOutlet weak var hauntCollectionView: UICollectionView!
     @IBOutlet weak var startButton: UIButton!
     
-    var collectionArray: [QueryDocumentSnapshot] = []
+    var collectionArray: [Haunt]!
     var userColor:UIColor = UIColor.purple
     var me: User!
     var db:Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        startButton.backgroundColor = userColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if Auth.auth().currentUser == nil {
             dismiss(animated: true, completion: nil)
         }
         
-        // Points to the root reference
-//        var storageRef = Storage.storage().reference(forURL: "gs://haunt-105fe.appspot.com/")
-//        var storageRef = Storage.storage().reference()
-//        storageRef.child("images").putData(metadata: nil) { metadata, error in
-//
-//            let downloadURL = metadata!.downloadURL()
-//            let url = String(describing: downloadURL)
-//            let post: Dictionary = ["postimage": url]
-//            newPostRef.setValue(post)
-//        }
-        
         db = Firestore.firestore()
+        
         db.collection("haunts").addSnapshotListener { snaps, error in
             
             if let error = error {
@@ -54,26 +49,40 @@ class AccountsettingViewController: UIViewController {
             }
             guard let snaps = snaps else { return }
             
-            // reload data
-            self.collectionArray.removeAll()
-            for document in snaps.documents {
-                self.collectionArray.append(document)
-                print(" haunt called from firebase \(document.data()) ")
+            self.collectionArray?.removeAll()
+            // ここで投稿のデータが取れる（databaseRootをobserveしているため）
+            for content in snaps.documents {
+                // 最後はvalueで取ってこれる
+                let value = content.data()
+                
+                let hauntHid = value["hid"] as! String
+                let hauntName = value["name"] as! String
+                let hauntImagePath = value["imagePath"] as! String
+                let hauntUser = value["user"] as! [String]?
+                
+                let haunt = Haunt(
+                    hid: hauntHid,
+                    name: hauntName,
+                    imagePath: hauntImagePath,
+                    users: hauntUser)
+                self.collectionArray?.append(haunt)
             }
+            
+            //
+            //            // reload data
+            //
+            //            for document in snaps.documents {
+            //                self.collectionArray.append(document)
+            //                print(" haunt called from firebase \(document.data()) ")
+            //            }
             self.hauntCollectionView.reloadData()
         }
-//        startButton.backgroundColor = userColor
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     // when push collection view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
-        let hauntName = String(describing: content["name"]!)
-        me.haunts.append(hauntName)
+        let hauntName = collectionArray[indexPath.row].name
+        me.haunts.append(hauntName!)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,68 +91,67 @@ class AccountsettingViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HauntCollectionViewCell
-        let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
-        cell.ToolNameLabel.text = String(describing: content["name"]!)
+        cell.ToolNameLabel.text = collectionArray[indexPath.row].name
         // ネットにある画像はダウンロードに時間がかかるのでこのように非同期画像表示ライブラリを使うと楽だしUX的にもよくなる
-        cell.hauntImage.kf.setImage(with: (String(describing: content["imagePath"]!) as! Resource))
+        cell.hauntImage.kf.setImage(with: (collectionArray[indexPath.row].imagePath as! Resource))
         
         return cell
     }
     
-//    // pink button
-//    @IBAction func pinkButton(_ sender: Any) {
-//        // decide user color
-//        userColor = ColorPinkButton.backgroundColor!
-//        // change background
-//        ColorPinkButton.backgroundColor = UIColor.black
-//        // enable to push only other button
-//        ColorPinkButton.isEnabled = false
-//        ColorGradButton.isEnabled = true
-//        ColorBlueButton.isEnabled = true
-//    }
-//    // grad button
-//    @IBAction func gradButton(_ sender: Any) {
-//        // decide user color
-//        userColor = ColorGradButton.backgroundColor!
-//        // change background
-//        ColorGradButton.backgroundColor = UIColor.black
-//        // enable to push only other button
-//        ColorPinkButton.isEnabled = true
-//        ColorGradButton.isEnabled = false
-//        ColorBlueButton.isEnabled = true
-//    }
-//    // blue button
-//    @IBAction func blueButton(_ sender: Any) {
-//        // decide user color
-//        userColor = ColorBlueButton.backgroundColor!
-//        // change background
-//        ColorBlueButton.backgroundColor = UIColor.black
-//        // enable to push only other button
-//        ColorPinkButton.isEnabled = true
-//        ColorGradButton.isEnabled = true
-//        ColorBlueButton.isEnabled = false
-//    }
+    //    // pink button
+    //    @IBAction func pinkButton(_ sender: Any) {
+    //        // decide user color
+    //        userColor = ColorPinkButton.backgroundColor!
+    //        // change background
+    //        ColorPinkButton.backgroundColor = UIColor.black
+    //        // enable to push only other button
+    //        ColorPinkButton.isEnabled = false
+    //        ColorGradButton.isEnabled = true
+    //        ColorBlueButton.isEnabled = true
+    //    }
+    //    // grad button
+    //    @IBAction func gradButton(_ sender: Any) {
+    //        // decide user color
+    //        userColor = ColorGradButton.backgroundColor!
+    //        // change background
+    //        ColorGradButton.backgroundColor = UIColor.black
+    //        // enable to push only other button
+    //        ColorPinkButton.isEnabled = true
+    //        ColorGradButton.isEnabled = false
+    //        ColorBlueButton.isEnabled = true
+    //    }
+    //    // blue button
+    //    @IBAction func blueButton(_ sender: Any) {
+    //        // decide user color
+    //        userColor = ColorBlueButton.backgroundColor!
+    //        // change background
+    //        ColorBlueButton.backgroundColor = UIColor.black
+    //        // enable to push only other button
+    //        ColorPinkButton.isEnabled = true
+    //        ColorGradButton.isEnabled = true
+    //        ColorBlueButton.isEnabled = false
+    //    }
     
     @IBAction func touchUpInsideStartButton(_ sender: Any) {
         let uid = Auth.auth().currentUser?.uid
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
-//        let color = userColor
+        //        let color = userColor
         
         // define my information
         me.uid = uid
         me.name = name
         me.link = link
-//        me.color = color
+        //        me.color = color
         
         // create document in firestore
         let saveDocument = db.collection("users").document()
         saveDocument.setData([
-            "uid": uid,
+            "uid": uid as Any,
             "name": name,
             "link": link,
-//            "color": color,
-            "haunts": collectionArray
+            //            "color": color,
+            "haunts": collectionArray as Any
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
