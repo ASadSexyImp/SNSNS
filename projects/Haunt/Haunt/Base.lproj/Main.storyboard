@@ -138,9 +138,6 @@
                                 <rect key="frame" x="91" y="348" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.13767088860000001" blue="0.97773502639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="pinkButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="EKD-bc-rqL"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-28-wyV">
                                 <rect key="frame" x="111" y="368" width="0.0" height="0.0"/>
@@ -151,17 +148,11 @@
                                 <rect key="frame" x="300" y="348" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="blueButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="dD1-SD-iGX"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnT-NX-ZEa">
                                 <rect key="frame" x="192" y="348" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="gradButton:" destination="Vj2-du-vHD" eventType="touchUpInside" id="ByW-eE-bDi"/>
-                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qJA-lu-tJu">
                                 <rect key="frame" x="0.0" y="456" width="414" height="128"/>
@@ -191,9 +182,6 @@
                     </view>
                     <connections>
                         <outlet property="AccountImageView" destination="CTN-80-Swj" id="k3L-63-P2b"/>
-                        <outlet property="ColorBlueButton" destination="6Ku-Uj-avI" id="zcm-1c-h1W"/>
-                        <outlet property="ColorGradButton" destination="CnT-NX-ZEa" id="rsF-t7-wJf"/>
-                        <outlet property="ColorPinkButton" destination="hkC-4x-ZEV" id="tfE-7b-qbq"/>
                         <outlet property="LinkTextField" destination="tNm-X2-jWy" id="lzh-RO-8mV"/>
                         <outlet property="UsernameTextField" destination="CjZ-F9-be3" id="Rn3-mB-Xd6"/>
                         <outlet property="hauntCollectionView" destination="qJA-lu-tJu" id="Mob-7K-ezN"/>

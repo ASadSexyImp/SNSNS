@@ -30,8 +30,11 @@
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAB-cG-Xfm">
                         <rect key="frame" x="16" y="4" width="100" height="104"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xbn-Ik-fH8">
+                        <rect key="frame" x="0.0" y="0.0" width="128" height="115"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -39,6 +42,7 @@
             <connections>
                 <outlet property="ImageButton" destination="lAB-cG-Xfm" id="9iN-df-g4H"/>
                 <outlet property="ToolNameLabel" destination="Eh9-rt-NPn" id="HKz-nS-Ez3"/>
+                <outlet property="hauntImage" destination="Xbn-Ik-fH8" id="aw8-zn-9Fp"/>
             </connections>
             <point key="canvasLocation" x="76.811594202898561" y="127.56696428571428"/>
         </collectionViewCell>

@@ -58,6 +58,7 @@ class AccountsettingViewController: UIViewController {
             self.collectionArray.removeAll()
             for document in snaps.documents {
                 self.collectionArray.append(document)
+                print(" haunt called from firebase \(document.data()) ")
             }
             self.hauntCollectionView.reloadData()
         }
@@ -84,7 +85,7 @@ class AccountsettingViewController: UIViewController {
         let content = collectionArray[indexPath.row].data() as! Dictionary<String, AnyObject>
         cell.ToolNameLabel.text = String(describing: content["name"]!)
         // ネットにある画像はダウンロードに時間がかかるのでこのように非同期画像表示ライブラリを使うと楽だしUX的にもよくなる
-        cell.ImageButton.kf.setImage(with: collectionArray[indexPath.row].imagePath)
+        cell.hauntImage.kf.setImage(with: (String(describing: content["imagePath"]!) as! Resource))
         
         return cell
     }
@@ -127,8 +128,7 @@ class AccountsettingViewController: UIViewController {
         let uid = Auth.auth().currentUser?.uid
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
-        let color = userColor
-        //        let image =
+//        let color = userColor
         
         // define my information
         me.uid = uid
@@ -142,7 +142,7 @@ class AccountsettingViewController: UIViewController {
             "uid": uid,
             "name": name,
             "link": link,
-            "color": color,
+//            "color": color,
             "haunts": collectionArray
         ]) { error in
             if error != nil {

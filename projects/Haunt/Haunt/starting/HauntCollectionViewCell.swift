@@ -13,6 +13,7 @@ class HauntCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var ImageButton: UIButton!
     @IBOutlet weak var ToolNameLabel: UILabel!
+    @IBOutlet weak var hauntImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
