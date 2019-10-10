@@ -11,7 +11,7 @@ import UIKit
 class StartProjectViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var projectPickerView: UIPickerView!
-    
+    var me: User!
     var pickerData: [String]!
     
     override func viewDidLoad() {

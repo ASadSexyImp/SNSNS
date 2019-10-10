@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Kingfisher
 
-class AccountsettingViewController: UIViewController {
+class AccountsettingViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var AccountImageView: UIImageView!
     @IBOutlet weak var UsernameTextField: UITextField!
@@ -23,19 +23,17 @@ class AccountsettingViewController: UIViewController {
     @IBOutlet weak var hauntCollectionView: UICollectionView!
     @IBOutlet weak var startButton: UIButton!
     
-    var collectionArray: [Haunt]!
+    var collectionArray: [Haunt]! = []
     var userColor:UIColor = UIColor.purple
     var me: User!
     var db:Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        startButton.backgroundColor = userColor
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
+        hauntCollectionView.dataSource = self
+        hauntCollectionView.register(UINib(nibName: "HauntCollectionViewCell", bundle: nil),forCellWithReuseIdentifier:"customCell")
+        //        startButton.backgroundColor = userColor
         if Auth.auth().currentUser == nil {
             dismiss(animated: true, completion: nil)
         }
@@ -63,22 +61,23 @@ class AccountsettingViewController: UIViewController {
                 let haunt = Haunt(
                     hid: hauntHid,
                     name: hauntName,
-                    imagePath: hauntImagePath,
+                    imagePath: hauntImagePath == "" ? nil : URL(string: hauntImagePath),
                     users: hauntUser)
                 self.collectionArray?.append(haunt)
             }
-            
-            //
-            //            // reload data
-            //
-            //            for document in snaps.documents {
-            //                self.collectionArray.append(document)
-            //                print(" haunt called from firebase \(document.data()) ")
-            //            }
             self.hauntCollectionView.reloadData()
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     // when push collection view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let hauntName = collectionArray[indexPath.row].name
@@ -86,15 +85,20 @@ class AccountsettingViewController: UIViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionArray.count
+        return collectionArray!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HauntCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! HauntCollectionViewCell
         cell.ToolNameLabel.text = collectionArray[indexPath.row].name
         // ネットにある画像はダウンロードに時間がかかるのでこのように非同期画像表示ライブラリを使うと楽だしUX的にもよくなる
-        cell.hauntImage.kf.setImage(with: (collectionArray[indexPath.row].imagePath as! Resource))
+        if collectionArray[indexPath.row].imagePath !=  nil  {
+            
+            cell.hauntImage.kf.setImage(with: collectionArray[indexPath.row].imagePath)
+        }
         
+        //        cell.hauntImage.kf.setImage(with: collectionArray[indexPath.row].imagePath)
+        print("final url is\(collectionArray[indexPath.row].imagePath)")
         return cell
     }
     

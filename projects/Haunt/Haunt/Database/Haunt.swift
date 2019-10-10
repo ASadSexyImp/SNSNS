@@ -11,6 +11,6 @@ import Foundation
 struct Haunt {
     var hid: String!
     var name: String!
-    var imagePath: String!
+    var imagePath: URL?
     var users: [String]!
 }
