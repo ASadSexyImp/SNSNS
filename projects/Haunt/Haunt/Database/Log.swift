@@ -10,6 +10,7 @@ import Foundation
 
 struct Log {
     var lid: String!
-    var date: NSDate!
+    var date: String!
+    var time: Int!
     var projects: [Project]!
 }

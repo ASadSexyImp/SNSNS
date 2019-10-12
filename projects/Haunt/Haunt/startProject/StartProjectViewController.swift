@@ -45,10 +45,21 @@ class StartProjectViewController: UIViewController,  UIPickerViewDelegate, UIPic
         if pickerData == ["No project"] {
             return
         }
-        performSegue(withIdentifier: "toRecordProject", sender: nil)
+        performSegue(withIdentifier: "toRecord", sender: nil)
     }
     
     @IBAction func TouchUpInsideNew(_ sender: Any) {
         performSegue(withIdentifier: "toCreateNewProject", sender: nil)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toRecord" {
+//            let homeViewController = segue.destination as! RecordProjectTimeViewController
+//            homeViewController.me = me
+//        }
+//        if segue.identifier == "toRecord" {
+//            let homeViewController = segue.destination as! RecordProjectTimeViewController
+//            homeViewController.me = me
+//        }
+//    }
 }

@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var cellCount: Int!
     var db:Firestore!
     var me: User!
+    var f = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +33,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         nameLabel.text = me.name
         linkLabel.text = me.link
-//        let docRef = db.collection("logs").whereField("user", isEqualTo: me.name)
 
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

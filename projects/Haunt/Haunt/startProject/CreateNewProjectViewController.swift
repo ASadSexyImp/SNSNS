@@ -85,7 +85,6 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
     @IBAction func TouchUpInsideKey(_ sender: Any) {
         keyButton.backgroundColor = UIColor.black
         project.secret = true
-        performSegue(withIdentifier: "toResultView", sender: nil)
     }
     
     @IBAction func TouchUpInsideStart(_ sender: Any) {
@@ -105,6 +104,7 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
                 print("send error!")
             }
         }
+        print("Create \(me.name)")
         performSegue(withIdentifier: "toRecord", sender: me)
         
     }

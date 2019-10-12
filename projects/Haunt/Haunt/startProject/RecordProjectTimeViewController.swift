@@ -44,11 +44,12 @@ class RecordProjectTimeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toFinish" {
             let recordViewController = segue.destination as! FinishProjectRecordingViewController
-//            recordViewController.project = project
-//            recordViewController.log = log
+            recordViewController.recordTime = count
+            recordViewController.me = me
+            recordViewController.project = project
+            print("Record \(me.name)")
         }
     }
-    
     
     @objc func up() {
         count = count + 1

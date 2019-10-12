@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qdd-uo-jyD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -210,7 +210,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sp-wl-gag">
-                                            <size key="itemSize" width="14" height="14"/>
+                                            <size key="itemSize" width="14" height="12"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -320,24 +320,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GFB-Mw-l3J">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="14" height="12"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 project active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L2z-LU-uGh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aaH-32-Ay2">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="14" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DaM-LW-fh1">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="14" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -1062,6 +1055,10 @@
                                 <rect key="frame" x="188" y="557" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="home"/>
+                                <connections>
+                                    <action selector="finishButton:" destination="C1S-Q9-OSe" eventType="touchUpInside" id="gdc-BT-dbl"/>
+                                    <segue destination="v8E-0z-zGk" kind="presentation" identifier="toHome" id="ZhT-Uz-CoE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1073,7 +1070,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZV-Kl-kff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4306" y="506"/>
+            <point key="canvasLocation" x="4305.7971014492759" y="505.58035714285711"/>
         </scene>
         <!--Project Manage View Controller-->
         <scene sceneID="TdC-X2-6Ki">
@@ -1318,10 +1315,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="v8E-0z-zGk" kind="relationship" relationship="viewControllers" id="e9O-cN-bLh"/>
-                        <segue destination="aOm-Ko-VAb" kind="relationship" relationship="viewControllers" id="Dsn-vc-Ctz"/>
                         <segue destination="qdd-uo-jyD" kind="relationship" relationship="viewControllers" id="g6A-hy-4St"/>
-                        <segue destination="QQj-md-mqB" kind="relationship" relationship="viewControllers" id="v6U-aZ-9VQ"/>
-                        <segue destination="mH5-TR-K3p" kind="relationship" relationship="viewControllers" id="Oni-Aw-bbP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoA-qi-3FC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1335,5 +1329,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Kuz-Pr-Jqr"/>
         <segue reference="Da3-Ac-yZ7"/>
+        <segue reference="ZhT-Uz-CoE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -38,6 +38,7 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
             dismiss(animated: true, completion: nil)
         }
         
+        me = User()
         db = Firestore.firestore()
         
         db.collection("haunts").addSnapshotListener { snaps, error in
@@ -138,32 +139,27 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
     //    }
     
     @IBAction func touchUpInsideStartButton(_ sender: Any) {
-        let uid = Auth.auth().currentUser?.uid
+//        let uid = (Auth.auth().currentUser?.uid)!
         let name = UsernameTextField.text!
         let link = LinkTextField.text!
         //        let color = userColor
         
         // define my information
-//        me = User(
+        me = User(
 //            uid: uid,
-//            name: name,
-//            link: link,
-//            color: "",
-//            imagePath: "",
-//            haunts: me.haunts,
-//            projects: [""],
-//            online: true,
-//            log: [""]
-//        )
+            name: name,
+            link: link,
+            haunts: me.haunts,
+            online: true
+        )
 //        
         // create document in firestore
         let saveDocument = db.collection("users").document()
         saveDocument.setData([
-            "uid": uid as Any,
+//            "uid": String(uid),
             "name": name,
-            "link": link,
-            //            "color": color,
-            "haunts": collectionArray as Any
+            "link": link
+//            "haunts": collectionArray as Any
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
@@ -182,7 +178,8 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toProject" {
             let homeViewController = segue.destination as! StartProjectViewController
-//            homeViewController.me = me
+            homeViewController.me = me
+            print("Home \(me.name)")
         }
     }
 }
