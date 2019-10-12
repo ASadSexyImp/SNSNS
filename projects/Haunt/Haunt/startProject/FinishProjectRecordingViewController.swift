@@ -9,7 +9,8 @@
 import UIKit
 
 class FinishProjectRecordingViewController: UIViewController {
-
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

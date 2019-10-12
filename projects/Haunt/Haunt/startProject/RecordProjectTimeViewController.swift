@@ -9,36 +9,50 @@
 import UIKit
 
 class RecordProjectTimeViewController: UIViewController {
+    
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var projectName: UILabel!
+    @IBOutlet weak var pauseStartButton: UIButton!
     
     var project: Project!
+    var me: User!
+    var log: Log!
+    var count: Int = 0
+    var timer: Timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        projectName.text = project.name
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
     }
-    @IBOutlet var label: UILabel!
     
-    var count: Int = 0
-    
-    var timer: Timer = Timer()
-    
-    @IBAction func start() {
-        if !timer.isValid {
+    @IBAction func pauseButton(_ sender: Any) {
+        if timer.isValid {
+            timer.invalidate()
+        }else{
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.up), userInfo: nil, repeats: true)
         }
     }
     
-    @IBAction func stop() {
-        if timer.isValid {
-            timer.invalidate()
+    @IBAction func finishButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toFinish", sender: me)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFinish" {
+            let recordViewController = segue.destination as! FinishProjectRecordingViewController
+//            recordViewController.project = project
+//            recordViewController.log = log
         }
     }
     
+    
     @objc func up() {
         count = count + 1
-        label.text = String(format: "%.2f ", count)
+        timeLabel.text = String(count)
     }
-
+    
 }

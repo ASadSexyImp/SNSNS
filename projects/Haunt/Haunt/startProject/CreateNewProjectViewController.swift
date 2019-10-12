@@ -30,7 +30,6 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
         hauntCollectionView.register(UINib(nibName: "HauntCollectionViewCell", bundle: nil),forCellWithReuseIdentifier:"customCell")
         
         db = Firestore.firestore()
-        
         db.collection("haunts").addSnapshotListener { snaps, error in
             
             if let error = error {
@@ -91,27 +90,30 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
     
     @IBAction func TouchUpInsideStart(_ sender: Any) {
         let name = projectNameTextField.text!
-        
+        project = Project(pid: "", name: "", time: "", secret: false, haunts: "")
+        project.name = name
         // create document in firestore
         let saveDocument = db.collection("projects").document()
         saveDocument.setData([
             "name": name,
-            "time": 0,
-            "haunts": collectionArray as Any
+            "time": 0
+//            "user": me.name!
+//            "haunts": collectionArray as Any
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
                 print("send error!")
             }
         }
-        performSegue(withIdentifier: "toHome", sender: me)
+        performSegue(withIdentifier: "toRecord", sender: me)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toRecordProjectView" {
+        if segue.identifier == "toRecord" {
             let recordViewController = segue.destination as! RecordProjectTimeViewController
             recordViewController.project = project
+            recordViewController.me = me
         }
     }
     

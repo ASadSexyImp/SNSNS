@@ -11,7 +11,7 @@ import Foundation
 struct Project {
     var pid: String!
     var name: String!
-    var time: NSDate!
+    var time: String!
     var secret: Bool = false
     var haunts: String
 }
