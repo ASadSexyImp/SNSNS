@@ -3,4 +3,86 @@
    uuid = "899B9B2A-D5D7-49C7-9434-AE18D463828F"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AA89D77-D9A7-413E-90C0-05982AE1D31C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Haunt/starting/AccountsettingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "touchUpInsideStartButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFAF3269-FDAD-428F-8A55-6EED9B398341"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Haunt/starting/AccountsettingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "touchUpInsideStartButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AFAF3269-FDAD-428F-8A55-6EED9B398341 - 18264fe15de22cbb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Haunt.AccountsettingViewController.touchUpInsideStartButton(Any) -&gt; ()"
+                  moduleName = "Haunt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spidey/projects/Haunt/Haunt/starting/AccountsettingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "2808">
+               </Location>
+               <Location
+                  uuid = "AFAF3269-FDAD-428F-8A55-6EED9B398341 - c5060f19b7d85900"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Haunt.AccountsettingViewController.touchUpInsideStartButton(Any) -&gt; ()"
+                  moduleName = "Haunt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spidey/projects/Haunt/Haunt/starting/AccountsettingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4637ED8-329D-486B-A78C-704CC167AE33"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Haunt/starting/AccountsettingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "touchUpInsideStartButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -30,5 +30,8 @@ class HauntCollectionViewCell: UICollectionViewCell {
     }
     
 
-
+    @IBAction func imageButton(_ sender: Any) {
+        
+    }
+    
 }

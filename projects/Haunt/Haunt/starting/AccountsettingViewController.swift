@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Kingfisher
 
-class AccountsettingViewController: UIViewController, UICollectionViewDataSource {
+class AccountsettingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var AccountImageView: UIImageView!
     @IBOutlet weak var UsernameTextField: UITextField!
@@ -54,7 +54,7 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
                 let value = content.data()
                 
                 let hauntHid = value["hid"] as! String
-                let hauntName = value["name"] as! String
+                let hauntName = value["name"] as? String
                 let hauntImagePath = value["imagePath"] as! String
                 let hauntUser = value["user"] as! [String]?
                 
@@ -71,8 +71,6 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -81,12 +79,15 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
     // when push collection view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let hauntName = collectionArray[indexPath.row].name
-        me.haunts.append(hauntName!)
+//        me.haunts.append(hauntName!)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionArray!.count
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! HauntCollectionViewCell
@@ -98,7 +99,7 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
         }
         
         //        cell.hauntImage.kf.setImage(with: collectionArray[indexPath.row].imagePath)
-        print("final url is\(collectionArray[indexPath.row].imagePath)")
+        print("final name is\(collectionArray[indexPath.row].name)")
         return cell
     }
     
@@ -143,11 +144,18 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
         //        let color = userColor
         
         // define my information
-        me.uid = uid
-        me.name = name
-        me.link = link
-        //        me.color = color
-        
+//        me = User(
+//            uid: uid,
+//            name: name,
+//            link: link,
+//            color: "",
+//            imagePath: "",
+//            haunts: me.haunts,
+//            projects: [""],
+//            online: true,
+//            log: [""]
+//        )
+//        
         // create document in firestore
         let saveDocument = db.collection("users").document()
         saveDocument.setData([
@@ -162,7 +170,7 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
                 print("send error!")
             }
         }
-        performSegue(withIdentifier: "toHome", sender: me)
+        performSegue(withIdentifier: "toProject", sender: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -172,9 +180,9 @@ class AccountsettingViewController: UIViewController, UICollectionViewDataSource
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toHomeView" {
-            let homeViewController = segue.destination as! HomeViewController
-            homeViewController.me = me
+        if segue.identifier == "toProject" {
+            let homeViewController = segue.destination as! StartProjectViewController
+//            homeViewController.me = me
         }
     }
 }

@@ -14,6 +14,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
+    
+    var db:Firestore!
 
     override func viewDidLoad() {
         super.viewDidLoad()
