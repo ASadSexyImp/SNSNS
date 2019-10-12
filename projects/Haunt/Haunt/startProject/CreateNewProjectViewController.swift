@@ -20,6 +20,7 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
     var collectionArray: [Haunt]! = []
     var me: User!
     var db:Firestore!
+    let saveData: UserDefaults = UserDefaults.standard
     
     var project: Project!
     
@@ -95,8 +96,8 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
         let saveDocument = db.collection("projects").document()
         saveDocument.setData([
             "name": name,
-            "time": 0
-//            "user": me.name!
+            "time": 0,
+            "user": saveData.object(forKey: "userName") as! String?
 //            "haunts": collectionArray as Any
         ]) { error in
             if error != nil {
@@ -104,7 +105,6 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
                 print("send error!")
             }
         }
-        print("Create \(me.name)")
         performSegue(withIdentifier: "toRecord", sender: me)
         
     }
@@ -113,7 +113,6 @@ class CreateNewProjectViewController: UIViewController, UICollectionViewDelegate
         if segue.identifier == "toRecord" {
             let recordViewController = segue.destination as! RecordProjectTimeViewController
             recordViewController.project = project
-            recordViewController.me = me
         }
     }
     

@@ -18,6 +18,7 @@ class FinishProjectRecordingViewController: UIViewController {
     var log: Log!
     var db:Firestore!
     var f = DateFormatter()
+    let saveData: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,27 +32,19 @@ class FinishProjectRecordingViewController: UIViewController {
         f.dateFormat = "yyyyMMdd"
         log.date = f.string(from: Date())
         log.time = recordTime
-        print("Finish \(me.name)")
         
         let saveDocument = db.collection("logs").document()
         saveDocument.setData([
             "date": log.date as Any,
             "time": recordTime as Any,
-            "user": me.name!
+            "user": saveData.object(forKey: "userName") as! String?
         ]) { error in
             if error != nil {
                 self.dismiss(animated: true, completion: nil)
                 print("send error!")
             }
         }
-        performSegue(withIdentifier: "toHome", sender: me)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toHome" {
-            let recordViewController = segue.destination as! HomeViewController
-            recordViewController.me = me
-        }
+        performSegue(withIdentifier: "toHome", sender: nil)
     }
     
 }

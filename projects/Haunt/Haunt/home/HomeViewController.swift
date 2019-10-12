@@ -14,32 +14,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
     
-    @IBOutlet weak var logCollectionView: UICollectionView!
-    @IBOutlet weak var projectCollectionView: UICollectionView!
+//    @IBOutlet weak var logCollectionView: UICollectionView!
+//    @IBOutlet weak var projectCollectionView: UICollectionView!
     
     var cellCount: Int!
-    var db:Firestore!
-    var me: User!
-    var f = DateFormatter()
+//    var db:Firestore!
+//    var f = DateFormatter()
+//    let saveData: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.logCollectionView.delegate = self
-        self.logCollectionView.dataSource = self
-        self.projectCollectionView.delegate = self
-        self.projectCollectionView.dataSource = self
+//        self.logCollectionView.delegate = self
+//        self.logCollectionView.dataSource = self
+//        self.projectCollectionView.delegate = self
+//        self.projectCollectionView.dataSource = self
         
-        
-        nameLabel.text = me.name
-        linkLabel.text = me.link
+//        db = Firestore.firestore()
+//        nameLabel.text = saveData.object(forKey: "userName") as! String?
+//        linkLabel.text = saveData.object(forKey: "userLink") as! String?
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        logCollectionView.reloadData()
+//        logCollectionView.reloadData()
         
         rearrangeDate()
     }
@@ -54,13 +54,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 //        cell.backgroundColor = me.color
-//        
+//
 //        if maxCommit! == 0 {
 //            cell.backgroundColor = UIColor(me.color, alpha: 1)
 //        }
         return cell
     }
-    
+//    
     func rearrangeDate() {
 //        commitArray = []
 //        let component = Calendar.Component.weekday

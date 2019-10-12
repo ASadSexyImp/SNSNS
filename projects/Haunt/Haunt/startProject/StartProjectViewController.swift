@@ -11,7 +11,7 @@ import UIKit
 class StartProjectViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var projectPickerView: UIPickerView!
-    var me: User!
+//    var me: User!
     var pickerData: [String]!
     
     override func viewDidLoad() {
@@ -52,14 +52,4 @@ class StartProjectViewController: UIViewController,  UIPickerViewDelegate, UIPic
         performSegue(withIdentifier: "toCreateNewProject", sender: nil)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toRecord" {
-//            let homeViewController = segue.destination as! RecordProjectTimeViewController
-//            homeViewController.me = me
-//        }
-//        if segue.identifier == "toRecord" {
-//            let homeViewController = segue.destination as! RecordProjectTimeViewController
-//            homeViewController.me = me
-//        }
-//    }
 }

@@ -45,9 +45,7 @@ class RecordProjectTimeViewController: UIViewController {
         if segue.identifier == "toFinish" {
             let recordViewController = segue.destination as! FinishProjectRecordingViewController
             recordViewController.recordTime = count
-            recordViewController.me = me
             recordViewController.project = project
-            print("Record \(me.name)")
         }
     }
     

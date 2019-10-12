@@ -27,6 +27,7 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
     var userColor:UIColor = UIColor.purple
     var me: User!
     var db:Firestore!
+    let saveData: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,13 +146,8 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
         //        let color = userColor
         
         // define my information
-        me = User(
-//            uid: uid,
-            name: name,
-            link: link,
-            haunts: me.haunts,
-            online: true
-        )
+        saveData.set(name, forKey: "userName")
+        saveData.set(link, forKey: "userLink")
 //        
         // create document in firestore
         let saveDocument = db.collection("users").document()
@@ -175,11 +171,9 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
         return true
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toProject" {
-            let homeViewController = segue.destination as! StartProjectViewController
-            homeViewController.me = me
-            print("Home \(me.name)")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toProject" {
+//            let homeViewController = segue.destination as! StartProjectViewController
+//        }
+//    }
 }
