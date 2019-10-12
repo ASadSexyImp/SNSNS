@@ -12,5 +12,6 @@ struct Log {
     var lid: String!
     var date: String!
     var time: Int!
+    var user: String!
     var projects: [Project]!
 }
