@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //    @IBOutlet weak var projectCollectionView: UICollectionView!
     
     var collectionArray: [Log]! = []
-    var cellCount: Int!
+    var cellCount: Int = 0
     var db:Firestore!
     var f = DateFormatter()
     var commitArray: [Int]!
@@ -64,12 +64,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.collectionArray.append(log)
                 
             }
+            self.rearrangeDate()
 //            print(" \(self.collectionArray)")
             self.logCollectionView.reloadData()
+            
         }
 //        self.projectCollectionView.delegate = self
 //        self.projectCollectionView.dataSource = self
-        rearrangeDate()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -122,7 +124,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             var sum: Int = 0
             print(" \(collectionArray)")
             for dat in collectionArray {
-                print (" \(f.string(from: date)) \(dat.date!)")
                 if f.string(from: date) == dat.date! {
                     
                     sum += dat.time
