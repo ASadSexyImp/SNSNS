@@ -93,6 +93,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.purple.cgColor
+        cell.layer.backgroundColor = UIColor.black.cgColor
         
         if commitArray[indexPath.row] > 10*60*60 {
             cell.backgroundColor = UIColor.purple
@@ -103,7 +104,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else if commitArray[indexPath.row] > 0 {
             cell.backgroundColor = UIColor.purple
         } else {
-            cell.backgroundColor = UIColor.green
+//            cell.backgroundColor = UIColor.green
         }
 
         return cell

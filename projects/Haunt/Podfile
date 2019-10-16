@@ -11,6 +11,7 @@ target 'Haunt' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI'
   pod 'Kingfisher'
 
   target 'HauntTests' do

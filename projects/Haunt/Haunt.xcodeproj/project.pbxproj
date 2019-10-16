@@ -305,11 +305,11 @@
 		22A48E272345DD610046C3D3 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				223E178F2348DBA600274434 /* HomeViewController.swift */,
 				22A48E1523457E4D0046C3D3 /* LogViewController.swift */,
 				22A48E232345DD4A0046C3D3 /* ProjectTableViewCell.swift */,
 				22A48E242345DD4A0046C3D3 /* ProjectTableViewCell.xib */,
 				22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */,
-				223E178F2348DBA600274434 /* HomeViewController.swift */,
 				22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */,
 			);
 			path = home;
@@ -416,6 +416,7 @@
 				2256F47A23430E7300AD1F47 /* Frameworks */,
 				2256F47B23430E7300AD1F47 /* Resources */,
 				96852AAD28AB03664A757392 /* [CP] Embed Pods Frameworks */,
+				A9470CDC13A9D7B97744C903 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -577,6 +578,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Haunt/Pods-Haunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9470CDC13A9D7B97744C903 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Haunt/Pods-Haunt-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Haunt/Pods-Haunt-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Haunt/Pods-Haunt-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D296FB0044426121FC5E4A69 /* [CP] Check Pods Manifest.lock */ = {

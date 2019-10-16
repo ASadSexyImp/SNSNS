@@ -32,6 +32,14 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UsernameTextField.layer.borderColor = UIColor.purple.cgColor
+        UsernameTextField.layer.borderWidth = 2.0
+        UsernameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+        
+        LinkTextField.layer.borderColor = UIColor.purple.cgColor
+        LinkTextField.layer.borderWidth = 2.0
+        LinkTextField.attributedPlaceholder = NSAttributedString(string: "link", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+        
         hauntCollectionView.dataSource = self
         hauntCollectionView.register(UINib(nibName: "HauntCollectionViewCell", bundle: nil),forCellWithReuseIdentifier:"customCell")
         //        startButton.backgroundColor = userColor
