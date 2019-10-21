@@ -8,19 +8,29 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
-
+class RegisterViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegate {
+    
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     
+    @IBOutlet weak var AuthButton: UIButton!
+    
+    var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()!}}
+    // 認証に使用するプロバイダの選択
+    let providers: [FUIAuthProvider] = [
+        FUIGoogleAuth(),
+        FUIFacebookAuth()
+    ]
+    
     var db:Firestore!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        mailTextField.layer.borderColor=[[UIColor, colorWithRed,:178.0f/255.0f green:178.0f/255.0f blue:178.0f/255.0f alpha:1.0], CGColor]
+        //        mailTextField.layer.borderColor=[[UIColor, colorWithRed,:178.0f/255.0f green:178.0f/255.0f blue:178.0f/255.0f alpha:1.0], CGColor]
         mailTextField.layer.borderColor = UIColor.purple.cgColor
         mailTextField.layer.borderWidth = 2.0
         mailTextField.attributedPlaceholder = NSAttributedString(string: "mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
@@ -34,6 +44,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         passwordConfirmTextField.layer.borderWidth = 2.0
         passwordConfirmTextField.attributedPlaceholder = NSAttributedString(string: "password confirm", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         passwordConfirmTextField.isSecureTextEntry = true // disclose password
+        
+        // authUIのデリゲート
+        self.authUI.delegate = self
+        self.authUI.providers = providers
+        AuthButton.addTarget(self,action: #selector(self.AuthButtonTapped(sender:)),for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +58,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func touchUpInsideRegisterButton(_ sender: Any) {
         // mail check
         guard let mail = mailTextField.text, mail != "" else {
@@ -69,7 +84,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             present(alertController, animated: true, completion: nil)
             return
         }
-
+        
         // Firebae auth
         Auth.auth().createUser(withEmail: mail, password: password, completion: { [weak self] user, error in
             // check it self exit
@@ -97,7 +112,24 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             }
         })
     }
-
+    
+    @objc func AuthButtonTapped(sender : AnyObject) {
+        // FirebaseUIのViewの取得
+        let authViewController = self.authUI.authViewController()
+        // FirebaseUIのViewの表示
+        self.present(authViewController, animated: true, completion: nil)
+    }
+    
+    //　認証画面から離れたときに呼ばれる（キャンセルボタン押下含む）
+    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
+        // 認証に成功した場合
+        if error == nil {
+            self.performSegue(withIdentifier: "toAccountSetting", sender: self)
+        }
+        // エラー時の処理をここに書く
+        print("error")
+    }
+    
     @IBAction func touchUpInsideLoginButton(_ sender: Any) {
         performSegue(withIdentifier: "toLogin", sender: nil)
     }

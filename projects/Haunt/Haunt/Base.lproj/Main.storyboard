@@ -73,6 +73,15 @@
                                     <action selector="touchUpInsideLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0z7-2k-tQO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3i-sJ-82G">
+                                <rect key="frame" x="111" y="500" width="192" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.13767088860000001" blue="0.97773502639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="1" green="0.13767088860000001" blue="0.97773502639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -93,6 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="AuthButton" destination="D3i-sJ-82G" id="RWs-ES-2Jj"/>
                         <outlet property="mailTextField" destination="WDU-un-Lhf" id="NpA-uH-gbJ"/>
                         <outlet property="passwordConfirmTextField" destination="Xdh-VX-YPp" id="Zj6-hz-IH9"/>
                         <outlet property="passwordTextField" destination="Lfs-q5-KWR" id="6Ha-64-xBC"/>
@@ -100,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-229" y="-402"/>
+            <point key="canvasLocation" x="-230.43478260869566" y="-402.45535714285711"/>
         </scene>
         <!--Accountsetting View Controller-->
         <scene sceneID="dCh-Xt-QE8">
