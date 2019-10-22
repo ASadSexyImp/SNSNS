@@ -50,14 +50,12 @@ class RecordProjectTimeViewController: UIViewController {
     }
     
     @objc func up() {
-        count = count + 1
-        
-//        let formatter = DateComponentsFormatter()
-//        formatter.unitsStyle = .positional
-//        formatter.allowedUnits = [.minute,.hour,.second]
-//        let data = formatter.string(from: count)
-    
-        timeLabel.text = String(count)
+        count = count + 100
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.hour, .minute, .second]
+        let time:TimeInterval = Double(count)
+        timeLabel.text = formatter.string(from: time)
     }
     
 }
