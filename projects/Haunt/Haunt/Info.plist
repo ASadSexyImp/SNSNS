@@ -87,5 +87,9 @@
 	<string>3700107536681450</string>
 	<key>FacebookDisplayName</key>
 	<string>Haunt</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Open camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Open Photo Library</string>
 </dict>
 </plist>

@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 import Kingfisher
 
-class AccountsettingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class AccountsettingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var AccountImageView: UIImageView!
+    
+    @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var UsernameTextField: UITextField!
     @IBOutlet weak var LinkTextField: UITextField!
     
@@ -113,39 +114,17 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
     
-    //    // pink button
-    //    @IBAction func pinkButton(_ sender: Any) {
-    //        // decide user color
-    //        userColor = ColorPinkButton.backgroundColor!
-    //        // change background
-    //        ColorPinkButton.backgroundColor = UIColor.black
-    //        // enable to push only other button
-    //        ColorPinkButton.isEnabled = false
-    //        ColorGradButton.isEnabled = true
-    //        ColorBlueButton.isEnabled = true
-    //    }
-    //    // grad button
-    //    @IBAction func gradButton(_ sender: Any) {
-    //        // decide user color
-    //        userColor = ColorGradButton.backgroundColor!
-    //        // change background
-    //        ColorGradButton.backgroundColor = UIColor.black
-    //        // enable to push only other button
-    //        ColorPinkButton.isEnabled = true
-    //        ColorGradButton.isEnabled = false
-    //        ColorBlueButton.isEnabled = true
-    //    }
-    //    // blue button
-    //    @IBAction func blueButton(_ sender: Any) {
-    //        // decide user color
-    //        userColor = ColorBlueButton.backgroundColor!
-    //        // change background
-    //        ColorBlueButton.backgroundColor = UIColor.black
-    //        // enable to push only other button
-    //        ColorPinkButton.isEnabled = true
-    //        ColorGradButton.isEnabled = true
-    //        ColorBlueButton.isEnabled = false
-    //    }
+    // open camera library
+    @IBAction func touchUoInsideImage(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            
+            present(picker, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func touchUpInsideStartButton(_ sender: Any) {
 //        let uid = (Auth.auth().currentUser?.uid)!
@@ -179,9 +158,9 @@ class AccountsettingViewController: UIViewController, UICollectionViewDelegate, 
         return true
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toProject" {
-//            let homeViewController = segue.destination as! StartProjectViewController
-//        }
-//    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey :Any]) {
+        imageButton.setImage(info[.editedImage] as? UIImage, for: .normal)
+        imageButton.imageView?.contentMode = .scaleAspectFit
+        dismiss(animated: true, completion: nil)
+    }
 }
