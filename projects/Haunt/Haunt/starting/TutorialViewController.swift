@@ -88,34 +88,3 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     }
 
 }
-//
-//extension TutorialViewController: UIScrollViewDelegate {
-//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//        // 左右のスワイプを判断するのでスクロール開始時に設定
-//        self.startPoint = scrollView.contentOffset;
-//    }
-//    
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
-//        if startPoint.x > scrollView.contentOffset.x {//左スワイプ
-//            pageChange(num: -1)
-//        } else if startPoint.x < scrollView.contentOffset.x {//右スワイプ
-//            pageChange(num: 1)
-//        }
-//        // scrollViewのスクロール位置を真ん中のビューに戻す
-//        let point = CGPoint(x: ((scrollView.frame.size.width * 2)), y: 0)
-//        scrollView.setContentOffset(point, animated: false)
-//        // pageが切り替わったのでビューを再描画
-//        setPageView()
-//    }
-//    
-//    // ページがループできるように適切な値をセットする
-//    private func pageChange(num:Int) {
-//        if page + num < 0 {
-//            page = pageViewArray.count - 1
-//        } else if page + num >= pageViewArray.count {
-//            page = 0
-//        } else {
-//            page = page + num
-//        }
-//    }
-//}

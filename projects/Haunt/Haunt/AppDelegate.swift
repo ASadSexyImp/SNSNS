@@ -20,16 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    // facebook&Google&電話番号認証時に呼ばれる関数
+    // firebase facebook&Google setting
     func application(_ app: UIApplication, open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
-        // GoogleもしくはFacebook認証の場合、trueを返す
+        // Google or Facebook login
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
-            return true
-        }
-        // 電話番号認証の場合、trueを返す
-        if Auth.auth().canHandle(url) {
             return true
         }
         return false
