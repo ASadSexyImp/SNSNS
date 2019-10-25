@@ -16,14 +16,13 @@ class PageViewController: UIPageViewController {
         self.dataSource = self
     }
 
+    // take each page
     func getFirst() -> FirstViewController {
         return storyboard!.instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
     }
-    
     func getSecond() -> SecondViewController {
         return storyboard!.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
     }
-
     func getThird() -> ThirdViewController {
         return storyboard!.instantiateViewController(withIdentifier: "ThirdViewController") as! ThirdViewController
     }
@@ -36,6 +35,7 @@ class PageViewController: UIPageViewController {
 
 extension PageViewController : UIPageViewControllerDataSource {
 
+    // scroll back
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
         if viewController.isKind(of: ThirdViewController.self) {
@@ -49,7 +49,7 @@ extension PageViewController : UIPageViewControllerDataSource {
             return nil
         }
     }
-
+    // scroll front
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
         if viewController.isKind(of: FirstViewController.self) {

@@ -15,16 +15,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, FUIAuthDele
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
-    
+    // imagebutton
     @IBOutlet weak var AuthButton: UIButton!
     
+    // auth page
     var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()!}}
-    // 認証に使用するプロバイダの選択
-    let providers: [FUIAuthProvider] = [
-        FUIGoogleAuth(),
-        FUIFacebookAuth()
-    ]
-    
+    // provider auth
+    let providers: [FUIAuthProvider] = [ FUIGoogleAuth(), FUIFacebookAuth()]
+    // firestore connect
     var db:Firestore!
     
     override func viewDidLoad() {
@@ -45,7 +43,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, FUIAuthDele
         passwordConfirmTextField.attributedPlaceholder = NSAttributedString(string: "password confirm", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         passwordConfirmTextField.isSecureTextEntry = true // disclose password
         
-        // authUIのデリゲート
+        // authUI setting
         self.authUI.delegate = self
         self.authUI.providers = providers
         AuthButton.addTarget(self,action: #selector(self.AuthButtonTapped(sender:)),for: .touchUpInside)
@@ -114,19 +112,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, FUIAuthDele
     }
     
     @objc func AuthButtonTapped(sender : AnyObject) {
-        // FirebaseUIのViewの取得
+        // authUI view
         let authViewController = self.authUI.authViewController()
-        // FirebaseUIのViewの表示
         self.present(authViewController, animated: true, completion: nil)
     }
     
-    //　認証画面から離れたときに呼ばれる（キャンセルボタン押下含む）
-    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
+    //　auth success func
+    public func authUI(_ authUI: FUIAuthDelegate, didSignInWith user: User?, error: Error?){
         // 認証に成功した場合
         if error == nil {
             self.performSegue(withIdentifier: "toAccountSetting", sender: self)
         }
-        // エラー時の処理をここに書く
         print("error")
     }
     
