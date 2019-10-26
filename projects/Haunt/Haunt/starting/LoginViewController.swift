@@ -8,72 +8,56 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegate {
+    // imagebutton
+    @IBOutlet weak var AuthButton: UIButton!
+    // auth page
+    var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()!}}
+    // provider auth
+    let providers: [FUIAuthProvider] = [ FUIGoogleAuth(), FUIFacebookAuth()]
+    // firestore connect
+    var db:Firestore!
     
-    @IBOutlet weak var mailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mailTextField.delegate = self
-        passwordTextField.delegate = self
-        passwordTextField.isSecureTextEntry  = true
+        // authUI setting
+        self.authUI.delegate = self
+        self.authUI.providers = providers
+        AuthButton.addTarget(self,action: #selector(self.AuthButtonTapped(sender:)),for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func touchUpInsideLoginButton(_ sender: Any) {
-        // check mail
-        guard let mail = mailTextField.text, mail != "" else {
-            // pop up message
-            let alertController = UIAlertController(title: "register error", message: "enter your mail", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-            return
+    
+    @objc func AuthButtonTapped(sender : AnyObject) {
+        // authUI view
+        let authViewController = self.authUI.authViewController()
+        self.present(authViewController, animated: true, completion: nil)
+    }
+    
+    //　auth success func
+    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
+        // 認証に成功した場合
+        if error == nil {
+            self.performSegue(withIdentifier: "toTutorial", sender: self)
         }
-        // check password
-        guard let password = passwordTextField.text, password != "" else {
-            // pop up message
-            let alertController = UIAlertController(title: "register error", message: "enter your password", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-            return
-        }
-
-        // log in phase
-        Auth.auth().signIn(withEmail: mail, password: password, completion: { [weak self] user, error in
-            // check it self exit
-            guard let self = self else { return }
-            
-            // error
-            if let error = error {
-                // pop up message
-                let alertController = UIAlertController(title: "login error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-            } else {
-                // move to original
-                self.dismiss(animated: true, completion: nil)
-            }
-        })
+        print("error")
     }
     
     @IBAction func touchUpInsideSignupButton(_ sender: Any) {
         performSegue(withIdentifier: "toSignup", sender: nil)
     }
-    
-    // key board setting
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
 
 }
+
+
+
+

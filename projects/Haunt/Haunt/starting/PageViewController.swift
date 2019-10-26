@@ -26,6 +26,10 @@ class PageViewController: UIPageViewController {
     func getThird() -> ThirdViewController {
         return storyboard!.instantiateViewController(withIdentifier: "ThirdViewController") as! ThirdViewController
     }
+    
+    func goAccount() -> AccountsettingViewController {
+        return storyboard!.instantiateViewController(withIdentifier: "toAccount") as! AccountsettingViewController
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,6 +62,9 @@ extension PageViewController : UIPageViewControllerDataSource {
         } else if viewController.isKind(of: SecondViewController.self) {
             // 2 -> 3
             return getThird()
+        } else if viewController.isKind(of: ThirdViewController.self) {
+            // 3 -> accountSetting
+            return goAccount()
         } else {
             // 3 -> end of the road
             return nil
