@@ -42,7 +42,6 @@
 		22A48E0D2344AD3E0046C3D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */; };
 		22A48E0F2344F7460046C3D3 /* AccountsettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */; };
 		22A48E13234570F80046C3D3 /* sxy.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A48E12234570F80046C3D3 /* sxy.png */; };
-		22A48E1623457E4D0046C3D3 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1523457E4D0046C3D3 /* LogViewController.swift */; };
 		22A48E1823457E780046C3D3 /* ProjectManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */; };
 		22A48E1A2345D74F0046C3D3 /* ProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */; };
 		22A48E1C2345D88E0046C3D3 /* OnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A48E1B2345D88E0046C3D3 /* OnlineViewController.swift */; };
@@ -65,6 +64,7 @@
 		22A4C9542361C4B0009424A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4C9532361C4B0009424A6 /* SecondViewController.swift */; };
 		22A4C9562361C4C0009424A6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4C9552361C4C0009424A6 /* ThirdViewController.swift */; };
 		22A4C9582361C606009424A6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4C9572361C606009424A6 /* PageViewController.swift */; };
+		22ADCBA02365CAEF009FC704 /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADCB9F2365CAEF009FC704 /* LogTableViewController.swift */; };
 		22B5F0E5234779AD003733F0 /* HauntCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F0E3234779AD003733F0 /* HauntCollectionViewCell.swift */; };
 		22B5F0E6234779AD003733F0 /* HauntCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B5F0E4234779AD003733F0 /* HauntCollectionViewCell.xib */; };
 		22B5F0E823483E33003733F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B5F0E723483E33003733F0 /* User.swift */; };
@@ -135,7 +135,6 @@
 		22A48E0C2344AD3E0046C3D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22A48E0E2344F7460046C3D3 /* AccountsettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsettingViewController.swift; sourceTree = "<group>"; };
 		22A48E12234570F80046C3D3 /* sxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sxy.png; sourceTree = "<group>"; };
-		22A48E1523457E4D0046C3D3 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManageViewController.swift; sourceTree = "<group>"; };
 		22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditViewController.swift; sourceTree = "<group>"; };
 		22A48E1B2345D88E0046C3D3 /* OnlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		22A4C9532361C4B0009424A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		22A4C9552361C4C0009424A6 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		22A4C9572361C606009424A6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		22ADCB9F2365CAEF009FC704 /* LogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		22B5F0E3234779AD003733F0 /* HauntCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HauntCollectionViewCell.swift; sourceTree = "<group>"; };
 		22B5F0E4234779AD003733F0 /* HauntCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HauntCollectionViewCell.xib; sourceTree = "<group>"; };
 		22B5F0E723483E33003733F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -312,11 +312,11 @@
 			isa = PBXGroup;
 			children = (
 				223E178F2348DBA600274434 /* HomeViewController.swift */,
-				22A48E1523457E4D0046C3D3 /* LogViewController.swift */,
 				22A48E232345DD4A0046C3D3 /* ProjectTableViewCell.swift */,
 				22A48E242345DD4A0046C3D3 /* ProjectTableViewCell.xib */,
 				22A48E1723457E780046C3D3 /* ProjectManageViewController.swift */,
 				22A48E192345D74F0046C3D3 /* ProjectEditViewController.swift */,
+				22ADCB9F2365CAEF009FC704 /* LogTableViewController.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -690,9 +690,9 @@
 				22B5F0E5234779AD003733F0 /* HauntCollectionViewCell.swift in Sources */,
 				2256F48123430E7300AD1F47 /* AppDelegate.swift in Sources */,
 				22A4C9522361C4A3009424A6 /* FirstViewController.swift in Sources */,
-				22A48E1623457E4D0046C3D3 /* LogViewController.swift in Sources */,
 				22A48E3E2345E6CF0046C3D3 /* ChatUserTableViewCell.swift in Sources */,
 				22A48E362345E47B0046C3D3 /* FinishProjectRecordingViewController.swift in Sources */,
+				22ADCBA02365CAEF009FC704 /* LogTableViewController.swift in Sources */,
 				22A4C9582361C606009424A6 /* PageViewController.swift in Sources */,
 				22A48E1C2345D88E0046C3D3 /* OnlineViewController.swift in Sources */,
 				223E17902348DBA600274434 /* HomeViewController.swift in Sources */,

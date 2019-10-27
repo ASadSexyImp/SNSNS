@@ -7,12 +7,13 @@ target 'Haunt' do
 
   # Pods for Haunt
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'FirebaseUI'
-  pod 'Kingfisher'
+  pod 'Firebase/Core' # firebase
+  pod 'Firebase/Firestore' # firestore
+  pod 'Firebase/Auth' #Auth
+  pod 'Firebase/Storage' #firestorage
+  pod 'FirebaseUI' #firebaseUI
+  pod 'Kingfisher' # catch optimaization
+  pod 'TabPageViewController' # infinity scroll
 
   target 'HauntTests' do
     inherit! :search_paths
