@@ -20,6 +20,17 @@ class LogTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let tabPageViewController = TabPageViewController.create()
+        let vc1 = UIViewController()
+        let vc2 = UIViewController()
+        let vc3 = UIViewController()
+        tabPageViewController.tabItems = [(vc1, "First"), (vc2, "Second"), (vc3, "Third")]
+        tabPageViewController.isInfinity = true
+        
+        present(tabPageViewController, animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
 

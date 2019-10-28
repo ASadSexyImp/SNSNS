@@ -10,7 +10,7 @@ import UIKit
 
 class TabCollectionCell: UICollectionViewCell {
 
-    var tabItemButtonPressedBlock: ((Void) -> Void)?
+    var tabItemButtonPressedBlock: (() -> ())?
     var option: TabPageOption = TabPageOption() {
         didSet {
             currentBarViewHeightConstraint.constant = option.currentBarHeight
@@ -47,7 +47,7 @@ class TabCollectionCell: UICollectionViewCell {
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        if item.characters.count == 0 {
+        if item.count == 0 {
             return CGSize.zero
         }
 
@@ -99,6 +99,6 @@ extension TabCollectionCell {
 
 extension TabCollectionCell {
     @IBAction fileprivate func tabItemTouchUpInside(_ button: UIButton) {
-        tabItemButtonPressedBlock?()
+        tabItemButtonPressedBlock!()
     }
 }

@@ -9,10 +9,10 @@ target 'Haunt' do
 
   pod 'Firebase/Core' # firebase
   pod 'Firebase/Firestore' # firestore
-  pod 'Firebase/Auth' #Auth
-  pod 'Firebase/Storage' #firestorage
-  pod 'FirebaseUI' #firebaseUI
-  pod 'Kingfisher' # catch optimaization
+  pod 'Firebase/Auth' # Auth
+  pod 'Firebase/Storage' # firestorage
+  pod 'FirebaseUI' # firebaseUI
+  pod 'Kingfisher' # catch optimization
   pod 'TabPageViewController' # infinity scroll
 
   target 'HauntTests' do
