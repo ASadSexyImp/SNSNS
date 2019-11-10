@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sns_array">
+        <item>line</item>
+        <item>facebook</item>
+        <item>twitter</item>
+        <item>instagram</item>
+    </string-array>
+</resources>
