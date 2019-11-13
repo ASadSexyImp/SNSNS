@@ -8,5 +8,7 @@
         <item>itelegram</item>
         <item>kakaotalk</item>
         <item>weibo</item>
+        <item>whatsapp</item>
+        <item>telegram</item>
     </string-array>
 </resources>
