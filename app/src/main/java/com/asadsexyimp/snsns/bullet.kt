@@ -1,22 +1,17 @@
 package com.asadsexyimp.snsns
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_bullet.*
-import kotlinx.android.synthetic.main.activity_main.*
-import android.R
 import android.widget.Spinner
 //import androidx.core.app.ComponentActivity
 //import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 //import sun.jvm.hotspot.utilities.IntArray
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+
 //import sun.jvm.hotspot.utilities.IntArray
 
 
@@ -29,6 +24,9 @@ class bullet : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bullet)
 
+        // choice
+        val spinnerItems = arrayOf("Facebook", "Instagram", "Whatsapp", "Twitter", "LINE",  "Telegram", "Kakaotalk", "Pintarest", "WeChat", "Tik Tok", "LinkedIn")
+
         // move page
         val home_intent: Intent = Intent(this, MainActivity::class.java)
 
@@ -37,10 +35,30 @@ class bullet : AppCompatActivity() {
             startActivity(home_intent)
         }
 
-//        // selcted spiner info
-//        val spinner = this.findViewById(R.id.spinner) as Spinner
-//        val str = spinner.selectedItem as String
-//        println(str)
+        // ArrayAdapter
+        val adapter = ArrayAdapter(applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems)
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        // set spinner to adapter
+        spinner.adapter = adapter
+
+        // listener
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?,
+                                        view: View?, position: Int, id: Long) {
+                val spinnerParent = parent as Spinner
+                val item = spinnerParent.selectedItem as String
+                textView2.text = item
+            }
+
+            //　アイテムが選択されなかった
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                //
+            }
+        }
+
     }
 }
 
