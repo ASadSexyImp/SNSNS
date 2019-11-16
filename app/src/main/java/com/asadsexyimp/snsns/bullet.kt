@@ -59,6 +59,11 @@ class bullet : AppCompatActivity() {
             }
         }
 
+        imageView.setOnClickListener{
+            val show: Any =
+                Snackbar.make("action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+        }
+
     }
 }
 
