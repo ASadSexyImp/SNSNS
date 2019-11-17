@@ -11,6 +11,18 @@ import android.widget.Spinner
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.google.android.material.snackbar.Snackbar
+import android.provider.MediaStore
+import android.graphics.Bitmap
+import android.app.Activity
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.net.Uri
+//import sun.jvm.hotspot.utilities.IntArray
+import java.io.IOException
+
 
 //import sun.jvm.hotspot.utilities.IntArray
 
@@ -19,13 +31,16 @@ import android.widget.ArrayAdapter
 
 
 class bullet : AppCompatActivity() {
+    private val READ_REQUEST_CODE = 42
+
+    // choice
+    val spinnerItems = arrayOf("Facebook", "Instagram", "Whatsapp", "Twitter", "LINE",  "Telegram", "Kakaotalk", "Pintarest", "WeChat", "Tik Tok", "LinkedIn")
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bullet)
-
-        // choice
-        val spinnerItems = arrayOf("Facebook", "Instagram", "Whatsapp", "Twitter", "LINE",  "Telegram", "Kakaotalk", "Pintarest", "WeChat", "Tik Tok", "LinkedIn")
 
         // move page
         val home_intent: Intent = Intent(this, MainActivity::class.java)
@@ -59,11 +74,35 @@ class bullet : AppCompatActivity() {
             }
         }
 
+
         imageView.setOnClickListener{
-            val show: Any =
-                Snackbar.make("action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            intent.type = "image/*"
+            startActivityForResult(intent, READ_REQUEST_CODE)
         }
 
+    }
+
+    public override fun onActivityResult(
+        requestCode: Int, resultCode: Int,
+        resultData: Intent?
+    ) {
+
+        if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            var uri: Uri? = null
+            if (resultData != null) {
+                uri = resultData.data
+                try {
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+                    imageView.setImageBitmap(bitmap)
+
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+
+            }
+        }
     }
 }
 
