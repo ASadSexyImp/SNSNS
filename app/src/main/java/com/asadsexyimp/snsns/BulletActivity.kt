@@ -30,7 +30,7 @@ import java.io.IOException
 
 
 
-class bullet : AppCompatActivity() {
+class BulletActivity : AppCompatActivity() {
     private val READ_REQUEST_CODE = 42
 
     // choice
@@ -84,6 +84,7 @@ class bullet : AppCompatActivity() {
 
     }
 
+    // local strage access
     public override fun onActivityResult(
         requestCode: Int, resultCode: Int,
         resultData: Intent?

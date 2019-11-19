@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // move page
-        val bullet_intent: Intent = Intent(this, bullet::class.java)
+        val bullet_intent: Intent = Intent(this, BulletActivity::class.java)
         val bang_intent: Intent = Intent(this, Bang::class.java)
 
         // SNS register
