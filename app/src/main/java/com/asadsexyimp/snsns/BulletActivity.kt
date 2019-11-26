@@ -22,11 +22,16 @@ import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.net.Uri
 //import sun.jvm.hotspot.utilities.IntArray
 import java.io.IOException
-
+import java.util.*
+import android.util.Log
+import io.realm.Realm
+import io.realm.RealmResults
+import io.realm.RealmObjectSchema
+import io.realm.DynamicRealm
+import io.realm.RealmMigration
+import io.realm.RealmConfiguration
 
 //import sun.jvm.hotspot.utilities.IntArray
-
-
 
 
 
@@ -35,12 +40,16 @@ class BulletActivity : AppCompatActivity() {
 
     // choice
     val spinnerItems = arrayOf("Facebook", "Instagram", "Whatsapp", "Twitter", "LINE",  "Telegram", "Kakaotalk", "Pintarest", "WeChat", "Tik Tok", "LinkedIn")
-
-
+    // realm
+    private lateinit var mRealm : Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bullet)
+
+        // realm setting
+        Realm.init(this)
+        mRealm = Realm.getDefaultInstance()
 
         // move page
         val home_intent: Intent = Intent(this, MainActivity::class.java)
@@ -82,6 +91,32 @@ class BulletActivity : AppCompatActivity() {
             startActivityForResult(intent, READ_REQUEST_CODE)
         }
 
+//        // create test
+//        create("test1",1)
+//        create("test2")
+//
+//        // read test
+//        val getData = read()
+//        getData.forEach {
+//            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
+//        }
+//
+//        // update test
+//        update(getData.first()!!.id, "updated")
+//
+//        val getUpdatedData = read()
+//        getUpdatedData.forEach {
+//            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
+//        }
+//
+//        // delete test
+//        delete(getData.first()!!.id)
+//
+//        val getDeletedData = read()
+//        getDeletedData.forEach {
+//            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
+//        }
+
     }
 
     // local strage access
@@ -105,5 +140,44 @@ class BulletActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
+    // realm CRUD
+
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        mRealm.close()
+//    }
+//
+//    fun create(name:String, price:Long = 0){
+//        mRealm.executeTransaction {
+//            var book = mRealm.createObject(Bullet::class.java , UUID.randomUUID().toString())
+//            book.name = name
+//            book.price = price
+//            mRealm.copyToRealm(book)
+//        }
+//    }
+//
+//    fun read() : RealmResults<Bullet> {
+//        return mRealm.where(Bullet::class.java).findAll()
+//    }
+//
+//    fun update(id:String, name:String, price:Long = 0){
+//        mRealm.executeTransaction {
+//            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
+//            book!!.name = name
+//            if(price != 0.toLong()) {
+//                book.price = price
+//            }
+//        }
+//    }
+//
+//    fun delete(id:String){
+//        mRealm.executeTransaction {
+//            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findAll()
+//            book.deleteFromRealm(0)
+//        }
+//    }
 }
 
