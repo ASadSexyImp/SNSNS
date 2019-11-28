@@ -41,45 +41,47 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             startActivity(bullet_intent)
         }
-        
 
-        // create test
-        create("test1",1)
-        create("test2")
-
-        // read test
-        val getData = read()
-        getData.forEach {
-            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
-        }
-
-        // update test
-        update(getData.first()!!.id, "updated")
-
-        val getUpdatedData = read()
-        getUpdatedData.forEach {
-            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
-        }
-
-        // delete test
-        delete(getData.first()!!.id)
-
-        val getDeletedData = read()
-        getDeletedData.forEach {
-            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
-        }
+//
+//        // create test
+//        create("test1",1)
+//        create("test2")
+//
+//        // read test
+//        val getData = read()
+//        getData.forEach {
+//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
+//        }
+//
+//        // update test
+//        update(getData.first()!!.id, "updated")
+//
+//        val getUpdatedData = read()
+//        getUpdatedData.forEach {
+//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
+//        }
+//
+//        // delete test
+//        delete(getData.first()!!.id)
+//
+//        val getDeletedData = read()
+//        getDeletedData.forEach {
+//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
+//        }
     }
+
+    // realm CRUD
 
     override fun onDestroy() {
         super.onDestroy()
         mRealm.close()
     }
 
-    fun create(name:String, price:Long = 0){
+    fun create(name:String, price:String){
         mRealm.executeTransaction {
             var book = mRealm.createObject(Bullet::class.java , UUID.randomUUID().toString())
             book.name = name
-            book.price = price
+            book.qr = price
             mRealm.copyToRealm(book)
         }
     }
@@ -88,13 +90,13 @@ class MainActivity : AppCompatActivity() {
         return mRealm.where(Bullet::class.java).findAll()
     }
 
-    fun update(id:String, name:String, price:Long = 0){
+    fun update(id:String, name:String, qr:String){
         mRealm.executeTransaction {
             var book = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
             book!!.name = name
-            if(price != 0.toLong()) {
-                book.price = price
-            }
+//            if(price != 0.toLong()) {
+//                book.qr = price
+//            }
         }
     }
 

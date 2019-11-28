@@ -98,7 +98,7 @@ class BulletActivity : AppCompatActivity() {
 //        // read test
 //        val getData = read()
 //        getData.forEach {
-//            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
+//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
 //        }
 //
 //        // update test
@@ -106,7 +106,7 @@ class BulletActivity : AppCompatActivity() {
 //
 //        val getUpdatedData = read()
 //        getUpdatedData.forEach {
-//            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
+//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
 //        }
 //
 //        // delete test
@@ -114,7 +114,7 @@ class BulletActivity : AppCompatActivity() {
 //
 //        val getDeletedData = read()
 //        getDeletedData.forEach {
-//            Log.d("debug","name :" + it.name + "price : " + it.price.toString())
+//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
 //        }
 
     }
@@ -145,39 +145,39 @@ class BulletActivity : AppCompatActivity() {
 
     // realm CRUD
 
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        mRealm.close()
-//    }
-//
-//    fun create(name:String, price:Long = 0){
-//        mRealm.executeTransaction {
-//            var book = mRealm.createObject(Bullet::class.java , UUID.randomUUID().toString())
-//            book.name = name
-//            book.price = price
-//            mRealm.copyToRealm(book)
-//        }
-//    }
-//
-//    fun read() : RealmResults<Bullet> {
-//        return mRealm.where(Bullet::class.java).findAll()
-//    }
-//
-//    fun update(id:String, name:String, price:Long = 0){
-//        mRealm.executeTransaction {
-//            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
-//            book!!.name = name
+    override fun onDestroy() {
+        super.onDestroy()
+        mRealm.close()
+    }
+
+    fun create(name:String, price:String){
+        mRealm.executeTransaction {
+            var book = mRealm.createObject(Bullet::class.java , UUID.randomUUID().toString())
+            book.name = name
+            book.qr = price
+            mRealm.copyToRealm(book)
+        }
+    }
+
+    fun read() : RealmResults<Bullet> {
+        return mRealm.where(Bullet::class.java).findAll()
+    }
+
+    fun update(id:String, name:String, qr:String){
+        mRealm.executeTransaction {
+            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
+            book!!.name = name
 //            if(price != 0.toLong()) {
-//                book.price = price
+//                book.qr = price
 //            }
-//        }
-//    }
-//
-//    fun delete(id:String){
-//        mRealm.executeTransaction {
-//            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findAll()
-//            book.deleteFromRealm(0)
-//        }
-//    }
+        }
+    }
+
+    fun delete(id:String){
+        mRealm.executeTransaction {
+            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findAll()
+            book.deleteFromRealm(0)
+        }
+    }
 }
 
