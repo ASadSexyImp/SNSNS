@@ -41,4 +41,20 @@
         tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="242dp"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <com.lukedeighton.wheelview.WheelView
+        android:id="@+id/wheelview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:emptyItemColor="@color/green_900"
+        app:wheelColor="@color/grey_400"
+        app:rotatableWheelDrawable="false"
+        app:selectionAngle="90.0"
+        app:selectionColor="@color/teal_900"
+        app:selectionPadding="4dp"
+        app:repeatItems="true"
+        app:wheelRadius="276dp"
+        app:wheelItemCount="14"
+        app:wheelPadding="13dp"
+        app:wheelItemRadius="41dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

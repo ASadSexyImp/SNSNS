@@ -104,29 +104,6 @@ class BulletActivity : AppCompatActivity() {
                 println("created!!")
             }
         }
-//
-//        // read test
-//        val getData = read()
-//        getData.forEach {
-//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
-//        }
-//
-//        // update test
-//        update(getData.first()!!.id, "updated")
-//
-//        val getUpdatedData = read()
-//        getUpdatedData.forEach {
-//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
-//        }
-//
-//        // delete test
-//        delete(getData.first()!!.id)
-//
-//        val getDeletedData = read()
-//        getDeletedData.forEach {
-//            Log.d("debug","name :" + it.name + "price : " + it.qr.toString())
-//        }
-
     }
 
     // local strage access
@@ -142,9 +119,9 @@ class BulletActivity : AppCompatActivity() {
                 qrFlag = true
                 qrImage = uri.toString()
                 try {
-                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+                    var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+                    bitmap = Bitmap.createScaledBitmap(bitmap, 480, 410, true);
                     imageView.setImageBitmap(bitmap)
-
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -152,8 +129,6 @@ class BulletActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
     override fun onDestroy() {
         super.onDestroy()
@@ -172,16 +147,6 @@ class BulletActivity : AppCompatActivity() {
 
     fun read() : RealmResults<Bullet> {
         return mRealm.where(Bullet::class.java).findAll()
-    }
-
-    fun update(id:String, name:String, qr:String){
-        mRealm.executeTransaction {
-            var bullet = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
-            bullet!!.name = name
-//            if(price != 0.toLong()) {
-//                book.qr = price
-//            }
-        }
     }
 
     fun delete(id:String){
