@@ -40,21 +40,24 @@ class BulletActivity : AppCompatActivity() {
 
     // choice
     val spinnerItems = arrayOf("Facebook", "Instagram", "Whatsapp", "Twitter", "LINE",  "Telegram", "Kakaotalk", "Pintarest", "WeChat", "Tik Tok", "LinkedIn")
-    // realm
-    private lateinit var mRealm : Realm
+
+    // realm setting
+    private val mRealm: Realm by lazy {
+        Realm.getDefaultInstance()
+    }
+
+    var snsFlag: Boolean = false
+    var qrFlag : Boolean = false
+    var qrImage : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bullet)
 
-        // realm setting
-        Realm.init(this)
-        mRealm = Realm.getDefaultInstance()
-
         // move page
         val home_intent: Intent = Intent(this, MainActivity::class.java)
 
-        // SNS register
+        // aback to home
         button3.setOnClickListener {
             startActivity(home_intent)
         }
@@ -75,14 +78,14 @@ class BulletActivity : AppCompatActivity() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 textView2.text = item
+                snsFlag = true
             }
 
-            //　アイテムが選択されなかった
+            //　not selected item
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                //
+
             }
         }
-
 
         imageView.setOnClickListener{
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
@@ -91,9 +94,16 @@ class BulletActivity : AppCompatActivity() {
             startActivityForResult(intent, READ_REQUEST_CODE)
         }
 
-//        // create test
-//        create("test1",1)
-//        create("test2")
+        // SNS register
+        button4.setOnClickListener {
+            println("push!")
+            println(snsFlag.toString())
+            println(qrFlag.toString())
+            if (snsFlag && qrFlag) {
+                create(textView2.text.toString(), qrImage)
+                println("created!!")
+            }
+        }
 //
 //        // read test
 //        val getData = read()
@@ -129,6 +139,8 @@ class BulletActivity : AppCompatActivity() {
             var uri: Uri? = null
             if (resultData != null) {
                 uri = resultData.data
+                qrFlag = true
+                qrImage = uri.toString()
                 try {
                     val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
                     imageView.setImageBitmap(bitmap)
@@ -143,19 +155,18 @@ class BulletActivity : AppCompatActivity() {
 
 
 
-    // realm CRUD
-
     override fun onDestroy() {
         super.onDestroy()
         mRealm.close()
     }
 
-    fun create(name:String, price:String){
+    // realm CRUD
+    fun create(name:String, qr:String){
         mRealm.executeTransaction {
-            var book = mRealm.createObject(Bullet::class.java , UUID.randomUUID().toString())
-            book.name = name
-            book.qr = price
-            mRealm.copyToRealm(book)
+            var bullet = mRealm.createObject(Bullet::class.java , UUID.randomUUID().toString())
+            bullet.name = name
+            bullet.qr = qr
+            mRealm.copyToRealm(bullet)
         }
     }
 
@@ -165,8 +176,8 @@ class BulletActivity : AppCompatActivity() {
 
     fun update(id:String, name:String, qr:String){
         mRealm.executeTransaction {
-            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
-            book!!.name = name
+            var bullet = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
+            bullet!!.name = name
 //            if(price != 0.toLong()) {
 //                book.qr = price
 //            }
@@ -175,8 +186,8 @@ class BulletActivity : AppCompatActivity() {
 
     fun delete(id:String){
         mRealm.executeTransaction {
-            var book = mRealm.where(Bullet::class.java).equalTo("id",id).findAll()
-            book.deleteFromRealm(0)
+            var bullet = mRealm.where(Bullet::class.java).equalTo("id",id).findAll()
+            bullet.deleteFromRealm(0)
         }
     }
 }
