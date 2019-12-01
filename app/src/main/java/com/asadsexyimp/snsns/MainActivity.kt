@@ -19,7 +19,7 @@ import com.lukedeighton.wheelview.adapter.WheelAdapter
 import io.realm.Realm
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.activity_main.*
-import sun.jvm.hotspot.utilities.IntArray
+//import sun.jvm.hotspot.utilities.IntArray
 
 
 //import sun.jvm.hotspot.utilities.IntArray
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             snslist.add(Bullet(it.id, it.name, it.qr))
             numbers.add(it.qr)
         }
-        val layout = findViewById(R.id.size)
+        wheelView.setWheelItemCount(snslist.size)
 
 
         wheelView.adapter = object : WheelAdapter {
