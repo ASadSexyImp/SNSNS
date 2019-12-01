@@ -2,25 +2,29 @@ package com.asadsexyimp.snsns
 
 //import android.support.v7.app.AppCompatActivity
 
-import android.R
+
+import com.asadsexyimp.snsns.R
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.graphics.drawable.LayerDrawable
-import android.graphics.drawable.ShapeDrawable
-import android.graphics.drawable.shapes.OvalShape
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.net.toUri
 import com.lukedeighton.wheelview.WheelView
-import com.lukedeighton.wheelview.adapter.WheelArrayAdapter
+import com.lukedeighton.wheelview.WheelView.*
+import com.lukedeighton.wheelview.adapter.WheelAdapter
 import io.realm.Realm
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.activity_main.*
+//import sun.jvm.hotspot.utilities.IntArray
+
+
+//import sun.jvm.hotspot.utilities.IntArray
+
+
 //import sun.jvm.hotspot.utilities.IntArray
 //import sun.util.locale.provider.LocaleProviderAdapter.getAdapter
 
@@ -32,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         Realm.getDefaultInstance()
     }
 
-    private val ITEM_COUNT = 10
+    private val ITEM_COUNT = 4
     var uri: String? = null
     var snslist = mutableListOf<Bullet>()
 
@@ -65,53 +69,50 @@ class MainActivity : AppCompatActivity() {
             snslist.add(Bullet(it.id, it.name, it.qr))
         }
 
+        val numbers =
+            arrayOf(
+                R.drawable.fb,
+                R.drawable.insta,
+                R.drawable.twitter,
+                R.drawable.line
+            )
 
+        wheelView.adapter = object : WheelAdapter {
+            override fun getDrawable(position: Int): Drawable? {
+                //return drawable here - the position can be seen in the gifs above
+                return ResourcesCompat.getDrawable(
+                    resources,
+                    numbers[position],
+                    null
+                )
 
+            }
 
-        val wheelView: WheelView = findViewById(R.id.wheelview) as WheelView
-
-        //create data for the adapter
-        //create data for the adapter
-        val entries: MutableList<Map.Entry<String, Int>> =
-            ArrayList(ITEM_COUNT)
-        for (i in 0 until ITEM_COUNT) {
-            val entry: Map.Entry<String, Int> =
-                MaterialColor.random(this, "\\D*_500$")
-            entries.add(entry)
+            override fun getCount(): Int {
+                //return the count
+                return numbers.size
+            }
         }
 
-        //populate the adapter, that knows how to draw each item (as you would do with a ListAdapter)
-        //populate the adapter, that knows how to draw each item (as you would do with a ListAdapter)
-        wheelView.setAdapter(MaterialColorAdapter(entries))
+        wheelView.setOnWheelItemSelectedListener { parent, itemDrawable, position ->
+            //the adapter position that is closest to the selection angle and it's drawable
+            Log.d("parent(Selected)", parent.toString())
+            Log.d("itemDrawable(Selected)", itemDrawable.toString())
+            Log.d("position(Selected)", position.toString())
+        }
 
-        //a listener for receiving a callback for when the item closest to the selection angle changes
-        //a listener for receiving a callback for when the item closest to the selection angle changes
-        wheelView.setOnWheelItemSelectedListener(object : WheelView.OnWheelItemSelectListener() {
-            fun onWheelItemSelected(
-                parent: WheelView,
-                itemDrawable: Drawable?,
-                position: Int
-            ) { //get the item at this position
-                val selectedEntry: Map.Entry<String, Int> =
-                    (parent.getAdapter() as MaterialColorAdapter).getItem(position)
-                parent.setSelectionColor(getContrastColor(selectedEntry))
+        wheelView.onWheelItemClickListener =
+            WheelView.OnWheelItemClickListener { parent, position, isSelected ->
+                //the position in the adapter and whether it is closest to the selection angle
+                Log.d("parent(Click)", parent.toString())
+                Log.d("position(Click)", position.toString())
+                Log.d("isSelected(Click)", isSelected.toString())
             }
-        })
 
-        wheelView.setOnWheelItemClickListener(object : WheelView.OnWheelItemClickListener() {
-            fun onWheelItemClick(
-                parent: WheelView?,
-                position: Int,
-                isSelected: Boolean
-            ) {
-                val msg = "$position $isSelected"
-                Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
-            }
-        })
-
-        //initialise the selection drawable with the first contrast color
-        //initialise the selection drawable with the first contrast color
-        wheelView.setSelectionColor(getContrastColor(entries[0]))
+        wheelView.onWheelAngleChangeListener = WheelView.OnWheelAngleChangeListener {
+            //the new angle of the wheel
+            Log.d("angle", it.toString())
+        }
 
     }
 
@@ -139,43 +140,6 @@ class MainActivity : AppCompatActivity() {
         mRealm.executeTransaction {
             var bullet = mRealm.where(Bullet::class.java).equalTo("id",id).findAll()
             bullet.deleteFromRealm(0)
-        }
-    }
-
-
-    //get the materials darker contrast
-    private fun getContrastColor(entry: Map.Entry<String, Int>): Int {
-        val colorName: String = MaterialColor.getColorName(entry)
-        return MaterialColor.getContrastColor(colorName)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id: Int = item.getItemId()
-        return if (id == R.id.action_settings) {
-            true
-        } else super.onOptionsItemSelected(item)
-    }
-
-    internal class MaterialColorAdapter(entries: List<Map.Entry<String?, Int?>?>?) :
-        WheelArrayAdapter<Map.Entry<String?, Int?>?>(entries) {
-        fun getDrawable(position: Int): Drawable {
-            val drawable =
-                arrayOf(
-                    createOvalDrawable(getItem(position).getValue()),
-                    TextDrawable(position.toString())
-                )
-            return LayerDrawable(drawable)
-        }
-
-        private fun createOvalDrawable(color: Int): Drawable {
-            val shapeDrawable = ShapeDrawable(OvalShape())
-            shapeDrawable.paint.color = color
-            return shapeDrawable
         }
     }
 
