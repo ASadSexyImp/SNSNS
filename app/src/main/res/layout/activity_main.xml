@@ -33,7 +33,7 @@
         app:selectionAngle="90.0"
         app:emptyItemColor="@color/grey_1000"
         app:wheelColor="@color/grey_700"
-        app:wheelItemCount="4"
+        app:wheelItemCount="@+id/size"
         app:wheelItemRadius="60dp"
         app:wheelPadding="8dp"
         app:wheelRadius="match_parent" />

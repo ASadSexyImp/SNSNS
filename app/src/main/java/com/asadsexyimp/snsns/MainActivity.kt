@@ -3,7 +3,6 @@ package com.asadsexyimp.snsns
 //import android.support.v7.app.AppCompatActivity
 
 
-import com.asadsexyimp.snsns.R
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
@@ -11,17 +10,18 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.graphics.drawable.toDrawable
 import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import com.lukedeighton.wheelview.WheelView
-import com.lukedeighton.wheelview.WheelView.*
 import com.lukedeighton.wheelview.adapter.WheelAdapter
 import io.realm.Realm
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.activity_main.*
+import sun.jvm.hotspot.utilities.IntArray
+
+
 //import sun.jvm.hotspot.utilities.IntArray
 
 
@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             snslist.add(Bullet(it.id, it.name, it.qr))
             numbers.add(it.qr)
         }
+        val layout = findViewById(R.id.size)
 
 
         wheelView.adapter = object : WheelAdapter {
