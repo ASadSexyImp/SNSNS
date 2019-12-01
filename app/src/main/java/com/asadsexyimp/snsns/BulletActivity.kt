@@ -58,7 +58,7 @@ class BulletActivity : AppCompatActivity() {
         val home_intent: Intent = Intent(this, MainActivity::class.java)
 
         // aback to home
-        button3.setOnClickListener {
+        button2.setOnClickListener {
             startActivity(home_intent)
         }
 
@@ -75,9 +75,9 @@ class BulletActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?,
                                         view: View?, position: Int, id: Long) {
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                textView2.text = item
+//                val spinnerParent = parent as Spinner
+//                val item = spinnerParent.selectedItem as String
+//                textView2.text = item
                 snsFlag = true
             }
 
@@ -103,6 +103,15 @@ class BulletActivity : AppCompatActivity() {
                 create(textView2.text.toString(), qrImage)
                 println("created!!")
             }
+        }
+
+
+        button3.setOnClickListener {
+            var data = read()
+            data.forEach {
+                delete(it.id)
+            }
+
         }
     }
 

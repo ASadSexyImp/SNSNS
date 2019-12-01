@@ -6,13 +6,16 @@ package com.asadsexyimp.snsns
 import com.asadsexyimp.snsns.R
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.net.toUri
+import androidx.core.view.isVisible
 import com.lukedeighton.wheelview.WheelView
 import com.lukedeighton.wheelview.WheelView.*
 import com.lukedeighton.wheelview.adapter.WheelAdapter
@@ -38,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private val ITEM_COUNT = 4
     var uri: String? = null
+    var selectedNum: Int = 0
     var snslist = mutableListOf<Bullet>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,39 +56,28 @@ class MainActivity : AppCompatActivity() {
             startActivity(bullet_intent)
         }
 
-        // SNS QR show
-        button2.setOnClickListener {
-            var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri?.toUri())
-            // resize image
-            bitmap = Bitmap.createScaledBitmap(bitmap, 480, 410, true);
-            imageView2.setImageBitmap(bitmap)
-            snslist.forEach {
-                it.name
-            }
+        // image
+        imageView2.setOnClickListener {
+            imageView2.isVisible = false
         }
 
         // read test
+        var numbers = mutableListOf<String>()
         val getData = read()
         getData.forEach {
             snslist.add(Bullet(it.id, it.name, it.qr))
+            numbers.add(it.qr)
         }
 
-        val numbers =
-            arrayOf(
-                R.drawable.fb,
-                R.drawable.insta,
-                R.drawable.twitter,
-                R.drawable.line
-            )
 
         wheelView.adapter = object : WheelAdapter {
             override fun getDrawable(position: Int): Drawable? {
-                //return drawable here - the position can be seen in the gifs above
-                return ResourcesCompat.getDrawable(
-                    resources,
-                    numbers[position],
-                    null
-                )
+//                return drawable here - the position can be seen in the gifs above
+                var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, numbers[position].toUri())
+                // resize image
+                bitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
+
+                return BitmapDrawable(getResources(), bitmap)
 
             }
 
@@ -107,11 +100,20 @@ class MainActivity : AppCompatActivity() {
                 Log.d("parent(Click)", parent.toString())
                 Log.d("position(Click)", position.toString())
                 Log.d("isSelected(Click)", isSelected.toString())
+                if(isSelected){
+                    imageView2.isVisible = true
+                    uri = snslist[position].qr
+                    println(uri)
+                    var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri?.toUri())
+                    // resize image
+                    bitmap = Bitmap.createScaledBitmap(bitmap, 700, 700, true);
+                    imageView2.setImageBitmap(bitmap)
+                }
             }
 
         wheelView.onWheelAngleChangeListener = WheelView.OnWheelAngleChangeListener {
             //the new angle of the wheel
-            Log.d("angle", it.toString())
+//            Log.d("angle", it.toString())
         }
 
     }
@@ -127,13 +129,6 @@ class MainActivity : AppCompatActivity() {
 
     fun read() : RealmResults<Bullet> {
         return mRealm.where(Bullet::class.java).findAll()
-    }
-
-    fun update(id:String, name:String, qr:String){
-        mRealm.executeTransaction {
-            var bullet = mRealm.where(Bullet::class.java).equalTo("id",id).findFirst()
-            bullet!!.name = name
-        }
     }
 
     fun delete(id:String){
