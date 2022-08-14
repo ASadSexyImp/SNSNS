@@ -1,6 +1,0 @@
-framework module Pods_HauntTests {
-  umbrella header "Pods-HauntTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

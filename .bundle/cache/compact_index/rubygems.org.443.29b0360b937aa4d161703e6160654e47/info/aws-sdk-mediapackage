@@ -1,0 +1,18 @@
+---
+1.0.0 aws-sdk-core:~> 3,aws-sigv4:~> 1.0|checksum:89582bd0b5366c6cdf70beae5a224469c9d1cc66211c1118a783d72f6984fa0d
+1.1.0 aws-sdk-core:~> 3,aws-sigv4:~> 1.0|checksum:f59efe45d92f81bcc7ae8f9301406ccbd9c369b49c103682b1682290c6d2aee9
+1.2.0 aws-sdk-core:~> 3,aws-sigv4:~> 1.0|checksum:16428cf42a531d22a315caf4fe8e1e4af428059b64733c8e75f6b5df45510ca4
+1.3.0 aws-sdk-core:~> 3,aws-sigv4:~> 1.0|checksum:0d7dace8de2ecc9795a54f31e3da28acb519021bf5395400f6db7f78180deedf
+1.4.0 aws-sdk-core:~> 3,aws-sigv4:~> 1.0|checksum:d8014da6f1145631d5ab5d339e2aaf03bb998a11e5812a6bb1878462d5869899
+1.5.0 aws-sdk-core:~> 3,aws-sigv4:~> 1.0|checksum:2b5ba56c8252d3c3b8eedcca5329ad9a4fe64afdb7c7dfef1f8b308791a5a73d
+1.6.0 aws-sdk-core:>= 3.26.0&~> 3,aws-sigv4:~> 1.0|checksum:3663df744b8f1d8e1be55ad8c058700e455ce384453a8aa80d4975439b52dc90
+1.7.0 aws-sdk-core:>= 3.26.0&~> 3,aws-sigv4:~> 1.0|checksum:c04836d99baadfe1266d7a3acd175f2479af0cd89cd3fae51672bd82da299d7a
+1.8.0 aws-sdk-core:>= 3.26.0&~> 3,aws-sigv4:~> 1.0|checksum:465a466087a2730349d9fcf2a9ec126830e89e912289ae4b46d298c42ecba38a
+1.9.0 aws-sdk-core:>= 3.26.0&~> 3,aws-sigv4:~> 1.0|checksum:f7d09f062e56972ae826de4e0d2c20de5c2fef03ab65d7bb2d711c6a99e7526b
+1.9.1 aws-sdk-core:>= 3.37.0&~> 3,aws-sigv4:~> 1.0|checksum:6e5bc26e7739595894bd4be4e85b1850b087c177d2b60fc9a30e1d917f905467
+1.10.0 aws-sdk-core:>= 3.39.0&~> 3,aws-sigv4:~> 1.0|checksum:8c3435d155fd4ca3d21d0f6dbc726dfd72e58afbf7e8aca13a81091ea728e03a
+1.11.0 aws-sdk-core:>= 3.39.0&~> 3,aws-sigv4:~> 1.0|checksum:e4d42ea2eb6d2ba42726a6618fda693b293f2750d24dbd17297bf1d7084b65b8
+1.12.0 aws-sdk-core:>= 3.39.0&~> 3,aws-sigv4:~> 1.0|checksum:bf7b0de843c27af4877263f02f8ccb333aeb0f676f1617dae14933f5205a0f26
+1.13.0 aws-sdk-core:>= 3.47.0&~> 3,aws-sigv4:~> 1.1|checksum:8d9cc3734a2c67cc9231fc46db771902133acdcf71426c343df10d86e54e724b
+1.14.0 aws-sdk-core:>= 3.48.0&~> 3,aws-sigv4:~> 1.1|checksum:8bf39a02d0143b0aff8d12484ba0161fbe70d0f51be6c911c11a909bfb1cf9cf
+1.15.0 aws-sdk-core:>= 3.48.2&~> 3,aws-sigv4:~> 1.1|checksum:9eaee24b0b2d1e3f1b17fad800e2f782e6724d73166f70855cefa244111248e8

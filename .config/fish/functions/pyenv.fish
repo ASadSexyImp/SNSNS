@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisher/pyenv/functions/pyenv.fish

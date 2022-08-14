@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/bd/completions/bd.fish

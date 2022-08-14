@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/gitignore/gitignore.fish

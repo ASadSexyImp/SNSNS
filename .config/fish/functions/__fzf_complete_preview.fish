@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/fzf/functions/__fzf_complete_preview.fish

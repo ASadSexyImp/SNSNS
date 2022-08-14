@@ -1,0 +1,10 @@
+---
+0.0.7 fog-core:~> 1.27,fog-json:~> 1.0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:20cebb98c1348be9f307371b86513872270f078677000a6a9fd75d8ee1670b77
+0.1.0 fog-core:~> 1.27,fog-json:~> 1.0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:f2863abbff1cc12e32bbda383e1eafede8534e4cd634cb1e60ce4fdd347ae6c4
+0.2.0 fog-core:~> 1.27,fog-json:~> 1.0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:1571284a3eb2a1eb6c66a9784336d3081a5c7ec551ab9a9cc91e2ac2b3efc674
+0.2.1 fog-core:~> 1.27,fog-json:~> 1.0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:2721d3358ea234ca45ace873a6ca77bbf7f9d6e5c7b0670fc6fd200916d2063a
+0.2.2 fog-core:~> 1.27,fog-json:~> 1.0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:89bbe8a722eaf83a9dbda779793cd32cc45bf1fa99e7536ce9dd2853a2b66eb1
+0.3.0 fog-core:~> 1.27,fog-json:~> 1.0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:83b76b3c2bf9b2a6f02eff92d44c2198f11abe42a7598be7890dd10fe77b7e57
+0.3.1 fog-core:>= 0,fog-json:>= 0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:cbeae74553781ef25ceda1b48473e6a6d04435eea22d5463f212026c33e6b9e7
+0.3.2 fog-core:>= 0,fog-json:>= 0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:58b532da71915f197a980ead0ab63d4a01332c1a993091db05c8a16478166a59
+0.3.3 fog-core:>= 0,fog-json:>= 0,ipaddress:~> 0.8,xml-simple:~> 1.1|checksum:d0aa317f7c1473a1d684fff51699f216bb9cb78b9ee9ce55a81c9bcc93fb85ee

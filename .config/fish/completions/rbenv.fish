@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisher/rbenv/completions/rbenv.fish

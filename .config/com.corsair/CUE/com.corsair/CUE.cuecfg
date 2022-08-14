@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<map name="AboutBorderlessWindow">
+		<binary name="windowGeometry">%00%00%00%13%00%00%00%01%DF%00%00%01%8B%00%00%04%20%00%00%024</binary>
+		<value name="windowVisibility">0</value>
+	</map>
+	<map name="BorderlessWindow">
+		<binary name="windowGeometry">%00%00%00%13%00%00%00%00g%00%00%007%00%00%05%98%00%00%03q</binary>
+		<value name="windowVisibility">0</value>
+	</map>
+	<map name="CommonSettings">
+		<value name="StartOnStartup">false</value>
+	</map>
+	<map name="DataCollection">
+		<value name="connected_device_list_changed_between_sessions">false</value>
+		<value name="cpu_1_frequency">2.3 GHz</value>
+		<value name="cpu_1_name">8-Core Intel Core i9</value>
+		<value name="cpu_1_number_of_cores">8</value>
+		<value name="enabled_sdk">true</value>
+		<value name="first_appearance_at">2020-10-07T10:03:12.021Z</value>
+		<value name="first_icue_ver">3.33.246</value>
+		<value name="gpu_1_driver_version">No information was collected</value>
+		<value name="gpu_1_frequency">No information was collected</value>
+		<value name="gpu_1_name">Intel UHD Graphics 630</value>
+		<value name="gpu_1_ram_size">0</value>
+		<value name="gpu_1_ram_type">No information was collected</value>
+		<value name="icue_space_opened">false</value>
+		<value name="icue_sw_language">en</value>
+		<value name="last_appearance_at">2020-10-16T09:15:54.587Z</value>
+		<value name="macos_code_name">Catalina</value>
+		<value name="motherboard_manufacturer">Apple</value>
+		<value name="motherboard_name">Apple</value>
+		<value name="num_of_connected_corsair_devices">0</value>
+		<value name="num_of_corsair_coolers_connected">0</value>
+		<value name="num_of_corsair_fans_connected">0</value>
+		<value name="num_of_corsair_psu_connected">0</value>
+		<value name="num_of_corsair_ram_modules_connected">0</value>
+		<value name="os_architecture">x64</value>
+		<value name="os_name">Mac OS X</value>
+		<value name="os_version">10.15.7 19H2</value>
+		<value name="osd_activated">false</value>
+		<value name="previous_close_timestamp">1602839754807</value>
+		<value name="ram_frequency">2667 MHz</value>
+		<value name="ram_manufacturer">Micron</value>
+		<value name="ram_size">65536</value>
+		<value name="ram_type">DDR4</value>
+		<value name="session_ended">true</value>
+		<value name="show_only_connected_devices">true</value>
+		<value name="start_on_system_startup">false</value>
+		<value name="system_language">English</value>
+		<value name="time_after_last_session_end">8</value>
+		<value name="time_in_background_session_duration">2577</value>
+		<value name="time_in_foreground_session_duration">0</value>
+		<value name="total_icue_starts">4</value>
+		<value name="total_num_of_icue_starts">4</value>
+		<value name="total_time_icue_used">2653</value>
+		<value name="total_time_used">159207335</value>
+		<value name="user_id">bb91ec528f19017bd9e6ffd7210b458cf90ab4499f82d17fd6ed23589e57a1e2cc7b2f5115e79553b6ec62eb54a5e7d57d185309e21ce3dcc6d8315ecfa2767e</value>
+	</map>
+	<map name="DeviceListWatcher">
+		<map name="device_list">
+			<value name="size">0</value>
+		</map>
+		<value name="device_list_saved_correctly">true</value>
+	</map>
+	<value name="Language">en</value>
+	<map name="MobileServer">
+		<map name="Credentials">
+			<value name="Password">RhRXdCd</value>
+			<value name="PasswordHint"></value>
+			<value name="PasswordType">1</value>
+		</map>
+		<binary name="ServerId">%00%00%00%0C%00%00%00%00%10%285I%7B%3Ba-TjJ%3Cb%21Tu%7D</binary>
+	</map>
+	<map name="QQControlsFileDialog">
+		<binary name="favoriteFolders">%00%00%00%09%00%00%00%00%00</binary>
+		<value name="height">0</value>
+		<value name="sidebarSplit">118.575</value>
+		<value name="sidebarVisible">true</value>
+		<value name="sidebarWidth">80</value>
+		<value name="width">0</value>
+	</map>
+	<map name="SwUpdate">
+		<value name="LastCheckDate">2020-10-23</value>
+	</map>
+</config>

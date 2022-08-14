@@ -1,0 +1,7 @@
+---
+0.0.1 httparty:>= 0,json:>= 0|checksum:877f3c06befe217f52dcb61179d0b37de8d4998ec5338df21256ff5d046f2bbb,ruby:>= 2.0.0
+0.0.2 httparty:>= 0,json:>= 0|checksum:f2de1882394ef580d80894ca1c92332f13a8be1a2f5e1b8e0dd92b850e7287a2,ruby:>= 2.0.0
+0.0.3 httparty:~> 0|checksum:940a161a2ab12c97289ab09aeda0714c7be4e65bb8badb7098fa3333fa7bef00,ruby:>= 2.0.0
+0.0.4 httparty:~> 0.10.0|checksum:bddd6e3ab44c1a96e26628bf2a76e166801b302af943952b2e18e420d44d0f0e,ruby:>= 2.0.0
+0.0.5 httparty:~> 0.1|checksum:117faf46c707bd0bc31890e1f25f9d63636b990147dd95ef06bc85da28e1a130,ruby:>= 2.0.0
+0.0.6 httparty:>= 0.10.0&~> 0.10|checksum:af7d04b5c5512ba002bf36da120f3e8e806758837f4d8785e3989b8ce21c4de4,ruby:>= 2.0.0

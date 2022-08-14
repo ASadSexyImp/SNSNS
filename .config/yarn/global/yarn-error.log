@@ -1,0 +1,38 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/spidey/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/spidey/.pyenv/shims:/Users/spidey/.pyenv/bin:/Users/spidey/.pyenv/shims:/Users/spidey/.pyenv/bin:/path/to/anaconda/bin:/Users/spidey/anaconda3/bin:/Users/spidey/.anyenv/bin:/Users/spidey/.pyenv/shims:/Users/spidey/.pyenv/bin:/Users/spidey/.npm-global/bin:/Users/spidey/.nodebrew/current/bin:/anaconda3/bin:/Users/spidey/.rbenv/shims:/Users/spidey/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/create-next-app: tunneling socket could not be established, cause=connect ETIMEDOUT 130.153.8.47:8080
+      at ClientRequest.onError (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:141076:17)
+      at Object.onceWrapper (events.js:286:20)
+      at ClientRequest.emit (events.js:198:13)
+      at Socket.socketErrorListener (_http_client.js:392:9)
+      at Socket.emit (events.js:198:13)
+      at emitErrorNT (internal/streams/destroy.js:91:8)
+      at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "dependencies": {
+      "create-next-app": "^0.5.9"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

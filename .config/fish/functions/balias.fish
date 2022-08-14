@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/balias/functions/balias.fish

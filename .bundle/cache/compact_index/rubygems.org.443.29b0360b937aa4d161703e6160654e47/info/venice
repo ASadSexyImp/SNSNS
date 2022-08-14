@@ -1,0 +1,10 @@
+---
+0.0.1 commander:~> 4.1.2,excon:~> 0.17.0,json:~> 1.7.3,terminal-table:~> 1.4.5|checksum:f5124e8b391a26abe6027640074907b1af477334ac8ac17ae84abbf98fb70196
+0.1.0 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:18881ee8e7a77fcf105e59e079223f290c151cff782d384330861c1e1388ff0b
+0.2.0 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:9070fdb1ce01a81931e631aec9195fe7c12afc743f9aa0d511bc359829c4e5b2
+0.3.0 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:015167b04667e63f6908e57e38d2313dc2f2401b71138d1966669b6506f960c0
+0.4.0 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:be9f25bc098df1f8bdfe8109ea410b78144c87faea94d6bf3c92edac8d8cbf61
+0.4.1 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:8c7c792b92038e957bc63a36477ec98655a85dae43209f0bfeb5798ed56a9ea2
+0.4.2 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:5355fece29c02e37092067a7bfae134404c98f1bab4faa4df91ef45a577b5be4
+0.4.3 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:7622efe0c51bfe5f6f52404be9533c9cb3207aa4f7b015087d7ccaa15c01107e
+0.5.0 commander:~> 4.1,json:>= 0,terminal-table:~> 1.4|checksum:2050c5f6d2aff2cf386b600ed03efa6a1f4d97052095be241595698616090999

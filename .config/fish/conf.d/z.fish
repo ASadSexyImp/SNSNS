@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/z/conf.d/z.fish

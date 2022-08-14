@@ -1,0 +1,2 @@
+/Users/spidey/anaconda3
+/Users/spidey/opt/anaconda3

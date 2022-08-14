@@ -1,0 +1,9 @@
+[user]
+	name = ASadSexyImp
+	email = masakazuplus@gmail.com
+[core]
+	editor = code --wait
+[merge]
+	tool = code --wait \"$MERGED\"
+[push]
+	default = simple

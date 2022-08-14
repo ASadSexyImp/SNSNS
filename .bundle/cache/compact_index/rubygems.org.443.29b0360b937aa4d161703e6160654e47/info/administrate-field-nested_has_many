@@ -1,0 +1,5 @@
+---
+0.0.1 administrate:~> 0.2.0,cocoon:~> 1.2,rails:~> 4.2|checksum:d61ae06436b65d590b0fc17587166c4728453b8145f0025425ecca11c25cec53
+0.0.2 administrate:~> 0.2.0,cocoon:~> 1.2,rails:~> 4.2|checksum:063deee12531d5c0c756d73a87222e4c26113c8ba774bf294e7c12cd69835ce2
+1.0.0 administrate:< 1&> 0.8,cocoon:>= 1.2.11&~> 1.2|checksum:88563ee883bcd7e9639601b32af3986c6fa516ba03d8dda621884a2e82289934
+1.1.0 administrate:< 1&> 0.8,cocoon:>= 1.2.11&~> 1.2|checksum:f0edfed206e1e0d620f6cfd441770173be4429d0387d2d6853ab3d0f42badf0e

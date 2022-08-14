@@ -1,0 +1,4 @@
+---
+0.0.2 administrate:~> 0.2.2,rails:~> 4.2|checksum:b17e0712030a8fda860e92ade88418659454b66704de5ac4d9727ebde2b2c52c
+0.0.3 administrate:~> 0.2.2,rails:~> 4.2|checksum:0e084249ac9f809efd09f66782946a1209f311bdb7d9dfe5a774aae008cc6df3
+0.0.4 administrate:~> 0.3,rails:< 5.1&>= 4.2|checksum:ff3d911dfefb46df0dc2d604b96ce82d89990fefb264a36bdf2febcd47acc2ab

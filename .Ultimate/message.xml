@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<message>
+		<type>0</type>
+		<version/>
+		<date>2020.05.28 20:57:39</date>
+		<expiration/>
+		<name>Output Path</name>
+		<description>/Users/spidey/Ultimate</description>
+		<url/>
+		<id>0</id>
+		<productid/>
+		<code/>
+		<content/>
+		<read>false</read>
+		<delete>false</delete>
+	</message>
+	<message>
+		<type>2</type>
+		<version>3.0.12.428</version>
+		<date>2020.05.27</date>
+		<expiration/>
+		<name>Upgrade to v3.0.12.428</name>
+		<description>1) Update ecore to 1.0.1.870;&lt;br /&gt;2) Update notification for B&amp;N DRM and Unknown DRM in bug report.</description>
+		<url/>
+		<id>0</id>
+		<productid/>
+		<code/>
+		<content/>
+		<read>true</read>
+		<delete>false</delete>
+	</message>
+	<message>
+		<type>7</type>
+		<version/>
+		<date>2019.7.29</date>
+		<expiration>2020.7.30</expiration>
+		<name>New software released - KCR Converter</name>
+		<description>Convert Kindle Cloud Reader to DRM-free ePUB/Mobi/AZW3 file with only 1 click.</description>
+		<url>https://www.epubor.com/kcr-converter.html</url>
+		<id>7004</id>
+		<productid>36498-49,36498-50</productid>
+		<code>None</code>
+		<content>None</content>
+		<read>false</read>
+		<delete>false</delete>
+	</message>
+	<message>
+		<type>4</type>
+		<version>2.0</version>
+		<date>2018.8.22</date>
+		<expiration/>
+		<name>User Guide</name>
+		<description>Important notice for beginners</description>
+		<url>http://download.epubor.com/guide.html</url>
+		<id>0</id>
+		<productid/>
+		<code>None</code>
+		<read>false</read>
+		<delete>false</delete>
+	</message>
+</data>

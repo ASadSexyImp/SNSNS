@@ -1,0 +1,501 @@
+git push origin master
+git config --local http.proxy http://proxy.uec.ac.jp:8080
+git push origin master
+git pull
+git pull origin master
+git push origin master
+git add .
+git commit -m"latest"
+git push origin master
+git add .
+git commit -m"remove text"
+git push origin master
+git config --local https.proxy http://proxy.uec.ac.jp:8080
+git push origin master
+git push origin :master
+git pull
+git pull origin master
+git push origin master
+cd ..
+cd tweet_collection/
+pip install OAuth1Session
+pip install —proxy=http://proxy.uec.ac.jp:8080 OAuth1Session 
+pip install --upgrade pip —proxy=http://proxy.uec.ac.jp:8080 
+pip install --upgrade pip —proxy http://proxy.uec.ac.jp:8080 
+pip install --upgrade pip —-proxy http://proxy.uec.ac.jp:8080 
+pip install --upgrade pip —-proxy=http://proxy.uec.ac.jp:8080 
+http_proxy="http://proxy.uec.ac.jp:8080" 
+https_proxy="http://PROXY_HOST:PROXY_PORT"
+https_proxy="http://proxy.uec.ac.jp:8080" 
+pip install --upgrade pip
+pip install --upgrade pip
+pip3 install --upgrade pip
+pip3 install --upgrade pip3
+which python
+sudo rm -rf /Library/Frameworks/Python.framework/Versions/2.7
+sudo rm -rf "/Applications/Python 2.7"
+python -V
+brew install pyenv
+cd projects/
+cd tweet_collection/
+pip install OAuth1Session
+pip install requests_oauthlib
+pip install requests_oauthlib
+pip install --upgrade pip
+
+pip install requests_oauthlib
+pip install requests requests_oauthlib
+pip list
+python get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+python get-pip.py --user
+pip list
+conda install anaconda-clean
+export PATH="/Users/jsmith/anaconda3/bin:$PATH"
+pip list
+which pip3
+sudo rm -rf /usr/local/bin/pip3
+sudo ln -s /usr/local/your_python_path/bin/pip3 /usr/local/bin/pip3
+pip3 -version
+pip install pip --upgrade
+brew install python 
+brew upgrade python
+pip install requests_oauthlib
+python3 -m install -U pip
+python3 -m pip install -U pip
+python3 get-pip.py
+pip install requests_oauthlib
+pip install requests
+pip install requests requests_oauthlib
+jupyter twitter_api.ipynb 
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+source ~/.bash_profile
+pyenv install anaconda3-4.0.0
+pyenv rehash
+pyenv global anaconda3-4.0.0
+python3
+jupyter twitter_api.ipynb 
+jupyter note twitter_api.ipynb 
+ jupyter notebook
+conda install -c conda-forge requests-oauthlib
+git add .
+git commit -m"change my api key"
+git push origin master
+mysql start
+mysql.server start
+mysql -u root < twitterTable.sql
+cd ogyu
+cd 研究関連/
+cd program/
+ls
+cd getTweet/
+mysql -u root < twitterTable.sql
+mysql -u root -p < twitterTable.sql
+mysql -u root
+mysql -u root -p
+run.sh
+bash run.sh
+cd ..
+cd ..
+cd ..
+cd ..
+ls
+git log
+git push origin master
+git add .gitignore
+git commit -m "Add ignore pattern"
+ls
+ls -a
+vi .gitignore
+git push origin master
+git rm --cached dialogue.zip 
+git push origin master
+git stash
+git stash
+git push origin master
+git log
+cd projects/
+cd tweet_collection/
+git log
+ls
+cd Desktop 
+ls
+cd ..
+cd Desktop(original)
+cd Desktop (original)
+cd Desktop (original)/
+cd Desktop (original)/
+cd aaa
+ls -a
+ls -l
+chmod 777 aaa
+chmod -R 777 aaa
+sudo chmod -R 777 aaa
+sudo chmod -R 777 aaa
+cd ..
+ls
+cd sxy
+sudo chmod -R 777 Desktop
+export ALL_PROXY=http://proxy.uec.ac.jp:8080
+brew install mecab-ipadic
+brew reinstall mecab-ipadic
+mysql.server start
+mysql -u root -p
+cd projects/Haunt/
+ls
+git add .
+git commit -m"connect login tutorial account"
+git push origin masteeer
+git push origin master
+cd ..
+ls
+git clone https://github.com/ASadSexyImp/Android_lp_apps.git
+cd Android_lp_apps/
+ls
+git add .
+git commit -m"count"
+git stash
+git add .
+git commit -m"sound"
+git push origin master
+git add .
+git commit -m"profile wip"
+git push origin master
+cd projects/Android_lp_apps/
+git add .
+git commit -m"album"
+git push origin master
+cd projects/Haunt/
+git add .
+git commit -m"search neon theme"
+git push orogin master
+git push origin master
+git add .
+git commit -m"add test UI"
+cd projects/Haunt/
+ls
+git push origin master
+cd ..
+git clone https://github.com/ASadSexyImp/watch_app.git
+ls
+cd watch_app/
+git remote add origin https://github.com/ASadSexyImp/watch_app.git
+git add .
+git commit -m"hello world"
+git push origin master
+cd projects/Haunt/
+git remote -v
+git remote rm origin
+git remote add origin https://github.com/ASadSexyImp/Haunt.git
+git remote -v
+git remote add origin https://github.com/ASadSexyImp/Haunt.git
+git push origin master
+git remote -v
+git remote rm origin
+git remote add origin https://github.com/ASadSexyImp/Haunt.git
+git remote add origin https://github.com/ASadSexyImp/Haunt.git
+git remote -v
+git remote rm origin
+git remote -v
+git remote add origin https://github.com/ASadSexyImp/Haunt.git
+git remote -v
+git remote -v
+git remote rm origin
+git add .
+git commit -m"new app"
+git remote -v
+git remote add origin https://github.com/ASadSexyImp/Haunt.git
+git remote -v
+ls
+pwd
+ls -al
+cd ..
+ls
+pwdd
+ls -al
+ls
+ls -al
+git log 
+git remote -v
+cd ..
+git clone https://github.com/ASadSexyImp/SNSNS.git
+cd SNSNS/
+cd ..
+cd SNSNS
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+cd ..
+ls
+ls
+cd ..
+ls
+cd projects/
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+cd SNSNS/
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+ls
+git config
+git add .
+git commit -m"new app"
+git push origin master
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+cd ..
+git config
+git config --global
+git add .
+cd SNSNS/
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git remote -v
+git remote rm origin
+
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git add .
+git commit -m"new app"
+git push origin master
+git remote -v
+pwd
+ls
+pwdd
+pwd
+cd ..
+ls
+cd ..
+ls
+cd -
+ls
+git remote ^v
+git remote -v
+open .
+git remote rm origin
+cd SNSNS/
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git push origin master
+git remote -v
+git remote -v
+git remote -v
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git remote -v
+git remote -v
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git remote -v
+git remote -v
+git clone https://github.com/ASadSexyImp/Haunt.git
+git clone https://github.com/ASadSexyImp/Haunt.git
+ls
+cd Haunt/
+git log
+cd projects/
+git remote -v
+git remote rm origin
+git remote -v
+git remote -v
+git remote rm origin
+git add .
+git stash
+git init
+git remote -v
+git clone https://github.com/ASadSexyImp/Haunt.git
+cd Haunt/
+git add .
+git commit -m"chnage hierachy"
+git push origin master
+git stash
+git stash
+git log
+ls
+cd ..
+cd Haunt/
+ls
+git add .
+git commit -m"change hierachey"
+git log
+git log
+git log
+git add .
+git commit -m"reverse git"
+git log
+git push origin master
+cd ..
+git remote -v
+cd Haunt/
+git remote -v
+git log
+cd ..
+cd SNSNS/
+git log
+git remote rm origin
+git remote -v
+git remote add https://github.com/ASadSexyImp/SNSNS/git
+git remote add https://github.com/ASadSexyImp/SNSNS.git
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git log
+git init
+git remote add origin https://github.com/ASadSexyImp/SNSNS.git
+git add .
+git log
+git commit -m"change hierachey"
+git push origin master
+git push origin master
+gi push --help
+git push --help
+git push -f origin master
+ls
+cd projects/
+ls
+cd Android_lp_apps/
+git add .
+git commit -m"kadai"
+git add .
+git commit -m"novel"
+git push origin master
+ note
+git push origin master -f
+cd projects/
+git clone https://github.com/sxydevelop/test.git
+cd test
+git push -u origin master
+git remote
+git init
+git remote add origin https://github.com/sxydevelop/test.git
+gir remote rm 
+gir remote rm origin
+git remote rm origin
+git remote add origin https://github.com/sxydevelop/test.git
+cd ..
+cd sxystudio/
+git pull
+cd Desktop
+cd ..
+ls
+cd Desktop/
+cd ..
+ls
+cd SNSNS/
+git add .
+git commit -m"app fill"
+git push origin master
+git add .
+git commit -m"refresh"
+git add .
+git commit -m"add sns"
+cd projects/SNSNS/
+git status
+git add .
+git commit -m"chnage id to QR"
+git add .
+git commit -m"add sns"
+git push origin master
+git add .
+git commit -m"intro sharedpreference"
+git push origin master
+git add .
+git coomit -m"change spinner"
+git commit -m"change spinner"
+git push origin master
+git add .
+git commit -m"qr changes"
+git push origin master
+git add .
+git commit -m"open qr"
+git push origin master
+git add .
+git commit -m"bang delete"
+git log
+cd projects/
+cd SNSNS/
+git add .
+git commit -m"introduce realm"
+git push origin master
+git add .
+git commit -m"qr read"
+git push origin master
+git add .
+git commit -m"WIP intro wheel animation"
+git push origin master
+cd projects/SNSNS/
+ls
+git add .
+git commit -m"wheel view"
+git add .
+git commit -m"wheel link to realm data"
+git push origin master
+git add .
+git commit -m"delete array"
+git add .
+git commit -m"done ittan"
+git push origin master
+cd projects/
+cd SNSNS/
+git push origin master
+/usr/local/opt/python/bin/python3.7 "/Users/spidey 1/projects/tweet_collection/ogyu/研究関連/program/getTweet/main.py"
+/usr/local/opt/python/bin/python3.7 "/Users/spidey 1/projects/tweet_collection/ogyu/研究関連/program/getTweet/main.py"
+/usr/local/opt/python/bin/python3.7 "/Users/spidey 1/projects/tweet_collection/ogyu/研究関連/program/getTweet/main.py"
+/usr/local/opt/python/bin/python3.7 "/Users/spidey 1/projects/tweet_collection/ogyu/研究関連/program/getTweet/main.py"
+/usr/local/opt/python/bin/python3.7 "/Users/spidey 1/projects/tweet_collection/ogyu/研究関連/program/getTweet/main.py"
+python
+python upgrade
+python3 --version
+python -v
+python -version
+python -v
+cd projects/
+ls
+cd tweet_collection/
+ls
+cd ogyu/
+ls
+cd 研究関連/
+ls
+cd program/
+ls
+cd ..
+cd ..
+cd ..
+ls
+jupyteer twitter_api.ipynb 
+jupyter twitter_api.ipynb 
+cd ..
+git clone https://github.com/ASadSexyImp/Android_lp_apps.git
+ls
+cd Android_lp_apps/
+ls
+cd RockPaperScissors
+git add .
+git commit -m"maybe outside od oncreate"
+git add .
+git commit -m"finish fight algoryzm"
+git push origin master
+git add .
+git commit -m"work on just middle text"
+git push origin master
+git push origin master
+cd ..
+cd ..
+cd ..
+ssh 172.21.65.41 -l nishimura
+ssh 172.21.65.41 -l nishimura
+ssh 172.21.65.41 -l nishimura
+cd projects/
+ls
+cd Android_lp_apps/
+ls
+cd RockPaperScissors
+git add .
+git commit -m "fix issue"
+git push origin master
+git add .
+git commit -m"finish"
+git push origin masteer
+git push origin master
+cd projects/
+ls
+git clone https://github.com/mrdoob/three.js.git
+cd projects/
+ls
+cd influe-heatmap/
+git add .
+git commit -m"add description"
+/Users/spidey/Downloads/plugin-macos/plugin/intel_oidn.dylib ; exit;

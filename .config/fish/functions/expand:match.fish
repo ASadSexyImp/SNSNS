@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/expand/functions/expand:match.fish

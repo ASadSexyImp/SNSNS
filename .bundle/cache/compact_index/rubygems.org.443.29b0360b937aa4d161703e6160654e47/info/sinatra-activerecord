@@ -1,0 +1,37 @@
+---
+0.1.0 sinatra:>= 0.9.4|checksum:2845de9766b3b257f55b27b13383085eda106f85b8591a4d6f29bba7422c3b46
+0.1.1 sinatra:>= 0.9.4|checksum:6aa26cdadef383f6e94d689c7ba32ca2f56d831c4d6a3eb76cdb5ffeecb8298c
+0.1.2 sinatra:>= 0.9.4|checksum:ce027c33d912828dfa0a11cddb77e34b2fd4a53dd1d9814563f8b3ec27c408e4
+0.1.3 sinatra:>= 0.9.4|checksum:b305055b41a04bc085fccbcc80e1538bcb72e40ddefc18e06de6a81402acbb54
+1.0.0 activerecord:~> 3.0,sinatra:~> 1.0|checksum:35e59bea5cef54c4f3e61adbde6571f52c3c139db268a7732100cb1f49282c28
+1.0.1 activerecord:~> 3.0,sinatra:~> 1.0|checksum:25fcfffb3a1517d379de4c0acff7bf67c9f51443139406dba853899e22989f3d
+1.1.0 activerecord:~> 3.0,sinatra:~> 1.0|checksum:3c210598577dfdc6773dd9246530568831106b23519aa83447d366fad07033b4
+1.1.1 activerecord:~> 3.0,sinatra:~> 1.0|checksum:5a1f97c8482caf8b9976b3d3c30e5b18fa07b91cc34bd0b93b821be1b457b918
+1.1.2 activerecord:~> 3.0,sinatra:~> 1.0|checksum:1f98d59c29ec7d97e3099f9bb2b760aa59d59374961d107c0cd7f281f5127ab7
+1.2.0 activerecord:~> 3.0,sinatra:~> 1.0|checksum:47b3f22c7e29b0ebbb156a00b0d687baed270f4ec343fcf86c7ab8f30eee1dba
+1.2.1 activerecord:~> 3.0,sinatra:~> 1.0|checksum:05b5baab85c4b2967c31e918aa2f644e8bf5b6128e18ece23d30549ea71e3534
+1.2.2 activerecord:~> 3.0,sinatra:~> 1.0|checksum:1230b3f36b2021eb1a019caf15746cb800dfd285c99cf0c85d5f5b9717f9857b
+1.2.3 activerecord:>= 3.0,sinatra:~> 1.0|checksum:0a3950113f18aaa2ad0655c49aaa285ada8acbdf62e044f518e8d1780d0f65bd
+1.2.4 activerecord:>= 3.0,sinatra:~> 1.0|checksum:b8fb7d57e0c2bb2875a9620d3a70f10c4f2dd298aedd198d1cc31b2af115580e
+1.2.5 activerecord:>= 3.0,sinatra:~> 1.0|checksum:14def57d6ed89999da7366f96419ceffd3bc896313521df3aba5cb77e20d212d
+1.3.0 activerecord:>= 3.0,sinatra:~> 1.0|checksum:debfedf70b15b11256abcebf1f7d3f499c21dd5a013648a72cf1ff3b50dc6f72
+1.4.0 activerecord:>= 3.0,sinatra:~> 1.0|checksum:af5f596505e41aff5a35d5f18fc6dcb6c2a91c241a2c96325c625703858862dd
+1.5.0 activerecord:>= 3.0,sinatra:~> 1.0|checksum:1e6b8712e349843db485cf96627dc2443ef694245aa2d820e0b27a3a2de90550,ruby:>= 1.9.2
+1.6.0 activerecord:>= 3.0,sinatra:~> 1.0|checksum:a0319f3dab4d19f95ea90cee717aa9d52dfa33eb9d0377b19dfb5f51805d3e28,ruby:>= 1.9.2
+1.7.0 activerecord:>= 3.0,sinatra:~> 1.0|checksum:f195f98be55d4ebca0548d2a3fd1d705e5d669f2c979fb3dfa7c9a92e729f3d4,ruby:>= 1.9.2
+2.0.0.rc activerecord:>= 3.2,sinatra:~> 1.0|checksum:89cba0491d50015631b63ac4bfde2cb9799bf2f89e0b54d310d0a7557b314ec7,ruby:>= 1.9.2,rubygems:> 1.3.1
+2.0.0.rc2 activerecord:>= 3.2,sinatra:~> 1.0|checksum:f0656c6c3c5f604a98182030c9e808235d9c017affa8d9d6f0be787051c6ebf0,ruby:>= 1.9.2,rubygems:> 1.3.1
+2.0.0 activerecord:>= 3.2,sinatra:~> 1.0|checksum:e9ab1b522e1fdbae0560ce2590acb8a846b116fab90bf63dd6a58bda69fd2e3a,ruby:>= 1.9.2
+2.0.1 activerecord:>= 3.2,sinatra:~> 1.0|checksum:c1135d0fec946900c3dcaa59e94f0525dd47e75746a6cad58c99a3621d1d6fbb,ruby:>= 1.9.2
+2.0.2 activerecord:>= 3.2,sinatra:~> 1.0|checksum:5134793a2c5fa6a9a30adac9656cb3e4bccdaf2ce9231536170adae1bb30d1a9,ruby:>= 1.9.2
+2.0.3 activerecord:>= 3.2,sinatra:~> 1.0|checksum:ff2270d18b392d21f48e523837ea63dbce8e14f7af9925f07057727ef5d5e414,ruby:>= 1.9.2
+2.0.4 activerecord:>= 3.2,sinatra:~> 1.0|checksum:ed6428a2256c7b9745bfa7f40f485fc34dc84eda1334028b89b32075196caa5c,ruby:>= 1.9.2
+2.0.5 activerecord:>= 3.2,sinatra:~> 1.0|checksum:41f532ea5a2378a24704d3a932a793c65f51c86bf7ead849d7086ada505acaa7,ruby:>= 1.9.2
+2.0.6 activerecord:>= 3.2,sinatra:~> 1.0|checksum:22d5c3ef8115a0fc540361e7290d139060b3903308568e48988b92ea90beffee,ruby:>= 1.9.2
+2.0.7 activerecord:>= 3.2,sinatra:~> 1.0|checksum:3bfe836176d4d0713c86c656d4a1ae56bef63e3154e291c644d8d481da550ad2,ruby:>= 1.9.2
+2.0.8 activerecord:>= 3.2,sinatra:~> 1.0|checksum:4a358fd0519f5c49597514c2235f65c20f078926075408c7ab050458b88837f4,ruby:>= 1.9.2
+2.0.9 activerecord:>= 3.2,sinatra:~> 1.0|checksum:7c236822ea527457a13fa437b8f09741a1ad98b3aad6e21417da1fedc3a92ff8,ruby:>= 1.9.2
+2.0.10 activerecord:>= 3.2,sinatra:~> 1.0|checksum:460aae4c65fc3e0a461cdc5becbfd71fa2f93aba677c0cbf74a0bcb2e90579fc,ruby:>= 1.9.2
+2.0.11 activerecord:>= 3.2,sinatra:~> 1.0|checksum:26162254088e543005829f8c1212e0f1f4690531a9af5937c69a8fbdbcde7dcc,ruby:>= 1.9.2
+2.0.12 activerecord:>= 3.2,sinatra:>= 1.0|checksum:2d67bd9c598e94d36d5775f3ffe8caa24c12b08cf47a5b73d0e431a5f323d59f,ruby:>= 1.9.2
+2.0.13 activerecord:>= 3.2,sinatra:>= 1.0|checksum:b7ca955c9438e88f28e357567a2738350bc273ae7c4202daf5966c628ca68150,ruby:>= 1.9.2

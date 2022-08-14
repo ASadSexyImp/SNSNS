@@ -1,0 +1,6 @@
+---
+0.0.1 |checksum:ce1dd23be7ce3e48cba71bd4ca5adc4b93a596e12875faaa6b3b875c19d5f821,ruby:>= 2.3.0,rubygems:>= 1.3.6
+1.0.0 |checksum:4a860028857ac3b015209d3e13acb51fd5ee98dd12aa258c45886aacf42471aa,ruby:>= 2.3.0,rubygems:>= 1.3.6
+1.1.0 |checksum:fa9552b8c2c1016b824b852cb97ed485c8ce152911751d9a9209a4d67c9d6a59,ruby:>= 2.3.0,rubygems:>= 1.3.6
+1.1.1 |checksum:4ca79d5a5ec35c27d98dd7811d228931052554ff69fb5f4a1a86eb6ab92899ab,ruby:>= 2.3.0,rubygems:>= 1.3.6
+2.0.0 |checksum:aaac92db88ae0667eebabc4d04aebf9f579106505d4665b40abb5c0a85e79f48,ruby:>= 2.3.0,rubygems:>= 1.3.6

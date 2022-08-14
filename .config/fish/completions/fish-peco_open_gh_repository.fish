@@ -1,0 +1,1 @@
+/Users/spidey/.config/fisherman/peco_open_gh_repository/completions/fish-peco_open_gh_repository.fish
